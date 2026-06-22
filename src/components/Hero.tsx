@@ -1,11 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, BarChart3, TrendingUp, Smartphone, Users } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center pt-24 overflow-hidden bg-white dark:bg-slate-950">
+    <section id="home" className="relative min-h-screen flex items-center pt-24 overflow-hidden bg-white dark:bg-slate-950">
       {/* Background Gradients */}
       <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-accent/20 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-primary/10 rounded-full blur-[120px] pointer-events-none" />
@@ -23,12 +23,12 @@ export default function Hero() {
             Digital Marketing Studio
           </div>
           
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-secondary dark:text-white leading-[1.2] mb-6">
-            Hal tallaabo ku <span className="text-primary dark:text-blue-400">casriyee</span> ganacsigaaga oo soo jiido macaamiil cusub.
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-secondary dark:text-white leading-[1.1] mb-6">
+            Hal tallaabo ku <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-500 dark:from-blue-400 dark:to-cyan-300">casriyee</span> ganacsigaaga oo soo jiido macaamiil cusub.
           </h1>
           
           <p className="text-lg text-text/80 dark:text-gray-300 mb-8 leading-relaxed">
-            Waxaan ka caawinnaa ganacsiyada inay yeeshaan muuqaal dijitaal ah oo casri ah, una helaan macaamiil badan.
+            We help businesses build a modern digital presence and reach more customers effectively.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
@@ -50,7 +50,7 @@ export default function Hero() {
           className="relative w-full hidden lg:flex items-center justify-center"
         >
           <img 
-            src="/screen.png" 
+            src="/screen.webp" 
             alt="Marketing Dashboard" 
             className="w-full h-auto rounded-2xl shadow-2xl border border-gray-200 dark:border-slate-800"
           />

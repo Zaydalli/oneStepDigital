@@ -4,12 +4,18 @@ import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 
 export default function Pricing() {
-  const plans = [
+  const heading = "Simple, Transparent Pricing";
+  const description = "Dooro xirmada kugu habboon si aad u dardar geliso kobocaaga dijitaalka ah. Ma jiraan lacago qarsoon.";
+  const button = "Choose Plan";
+  const customHeading = "Looking for Custom Services?";
+  const customDescription = "Website Development, Logo Design, Meta Ads Management, and more. Let's build a package that fits your exact needs.";
+  const customButton = "Contact for Custom Quote";
+
+  const plansData = [
     {
       name: "DIGITAL STARTER",
-      subtitle: "Nidaamka aasaasiga",
-      price: "$120",
-      period: "Hal Mar",
+      subtitle: "Basic Setup",
+      period: "One Time",
       features: [
         "QR / Digital Catalog Setup",
         "WhatsApp Business Setup & Optimization",
@@ -19,49 +25,55 @@ export default function Pricing() {
         "1 Welcome / Offer Post",
         "Final QR, Link & WhatsApp Test"
       ],
-      supportNote: "Wareejinta shaqada kadib, wixii wax ka beddel ah ama shaqo dheeri ah si gaar ah ayaa loo xisaabinayaa.",
-      noteLabel: "Shuruudda Taageerada:",
-      recommended: false
+      supportNote: "After handover, any modifications or extra work will be charged separately.",
+      noteLabel: "Support Terms:"
     },
     {
       name: "CONTENT BOOST",
-      subtitle: "Muuqaallo Soo Jiita Macaamiisha",
-      price: "$150",
-      period: "Bishii",
+      subtitle: "Engaging Visuals",
+      period: "Monthly",
       features: [
-        "2 Short Reels bishii",
-        "2 Saacadood oo Duubis Flexible ah",
+        "2 Short Reels per month",
+        "2 Hours Flexible Filming",
         "Editing & Text Captions",
         "Ready-to-Post Files"
       ],
-      supportNote: "Xirmadani waa abuuris muuqaal keliya. Macmiilka ayaa la wareegaya oo isagu post-gareynaya.",
-      noteLabel: "FG:",
-      recommended: false
+      supportNote: "This package is for content creation only. The client is responsible for posting.",
+      noteLabel: "Note:"
     },
     {
       name: "GROWTH MANAGEMENT",
-      subtitle: "Maamulka Joogtada ah ee Bogagga",
-      price: "$200",
-      period: "Bishii",
+      subtitle: "Continuous Page Management",
+      period: "Monthly",
       features: [
-        "6 Posts / Designs bishii",
-        "2 Short Reels bishii",
+        "6 Posts / Designs per month",
+        "2 Short Reels per month",
         "Posting (Facebook / Instagram / TikTok)",
         "Content Plan & Monthly Report"
       ],
-      supportNote: "Xirmadani kuma jirto bixinta lacagta Meta Ads-ka iyo u jawaabidda farriimaha (DMs/Comments).",
-      noteLabel: "FG:",
-      recommended: true
+      supportNote: "This package does not include Meta Ads budget or replying to messages (DMs/Comments).",
+      noteLabel: "Note:"
     }
   ];
+
+  const planBase = [
+    { price: "$120", recommended: false },
+    { price: "$150", recommended: true },
+    { price: "$200", recommended: false }
+  ];
+
+  const plans = plansData.map((plan, index) => ({
+    ...plan,
+    ...planBase[index]
+  }));
 
   return (
     <section id="pricing" className="py-[120px] bg-white dark:bg-slate-900">
       <div className="max-w-[1280px] mx-auto px-6 lg:px-12">
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-secondary dark:text-white mb-6">Simple, Transparent Pricing</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-secondary dark:text-white mb-6">{heading}</h2>
           <p className="text-lg text-text/80 dark:text-gray-300">
-            Choose the perfect plan to accelerate your digital growth. No hidden fees.
+            {description}
           </p>
         </div>
 
@@ -124,11 +136,33 @@ export default function Pricing() {
                     : "bg-gray-50 dark:bg-slate-800 text-secondary dark:text-white hover:bg-gray-50 dark:bg-slate-800/80 border border-gray-200 dark:border-slate-800"
                 }`}
               >
-                Choose Plan
+                {button}
               </a>
             </motion.div>
           ))}
         </div>
+
+        {/* Custom Services CTA */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="mt-16 bg-primary/5 dark:bg-primary/10 border border-primary/20 rounded-[24px] p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left"
+        >
+          <div>
+            <h3 className="text-2xl font-bold text-secondary dark:text-white mb-2">{customHeading}</h3>
+            <p className="text-text/80 dark:text-gray-300">
+              {customDescription}
+            </p>
+          </div>
+          <a
+            href="#contact"
+            className="shrink-0 bg-primary text-white px-8 py-4 rounded-xl font-medium hover:bg-primary/90 transition-all shadow-md hover:shadow-lg"
+          >
+            {customButton}
+          </a>
+        </motion.div>
       </div>
     </section>
   );

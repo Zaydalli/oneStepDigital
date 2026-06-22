@@ -1,55 +1,44 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Lightbulb, TrendingUp, Sparkles } from "lucide-react";
 
 export default function About() {
-  const features = [
-    {
-      icon: <Lightbulb className="w-8 h-8 text-primary" />,
-      title: "Creativity",
-      description: "We bring fresh, innovative ideas to make your brand stand out in the crowded digital space."
-    },
-    {
-      icon: <TrendingUp className="w-8 h-8 text-accent" />,
-      title: "Growth",
-      description: "Data-driven strategies designed to scale your business and increase your bottom line."
-    },
-    {
-      icon: <Sparkles className="w-8 h-8 text-secondary" />,
-      title: "Innovation",
-      description: "Utilizing the latest technologies and trends to keep your business ahead of the curve."
-    }
-  ];
-
   return (
-    <section id="about" className="py-[120px] bg-white dark:bg-slate-900">
-      <div className="max-w-[1280px] mx-auto px-6 lg:px-12">
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-secondary dark:text-white mb-6">What is OneStep Digital?</h2>
-          <p className="text-lg text-text/80 dark:text-gray-300">
-            OneStep Digital helps businesses build their digital presence through creative marketing solutions, professional content creation, and growth strategies.
-          </p>
-        </div>
+    <section id="about" className="py-[120px] bg-gray-50 dark:bg-slate-950 relative overflow-hidden">
+      {/* Decorative Background Glow */}
+      <div className="absolute top-0 right-1/4 w-96 h-96 bg-primary/5 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-accent/5 rounded-full blur-[100px] pointer-events-none" />
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {features.map((feature, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ y: -10 }}
-              className="bg-white dark:bg-slate-900 p-8 rounded-[20px] shadow-sm hover:shadow-xl border border-gray-200 dark:border-slate-800/50 transition-all duration-300"
-            >
-              <div className="w-16 h-16 rounded-2xl bg-gray-50 dark:bg-slate-800 flex items-center justify-center mb-6">
-                {feature.icon}
-              </div>
-              <h3 className="text-xl font-bold text-secondary dark:text-white mb-3">{feature.title}</h3>
-              <p className="text-text/80 dark:text-gray-300 leading-relaxed">{feature.description}</p>
-            </motion.div>
-          ))}
+      <div className="max-w-[1280px] mx-auto px-6 lg:px-12 relative z-10">
+        <div className="max-w-4xl mx-auto text-center">
+          
+          {/* Story Text */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="bg-white dark:bg-slate-900 rounded-[32px] shadow-xl border border-gray-200 dark:border-slate-800 p-8 md:p-16 relative z-10"
+          >
+            <div className="inline-block px-4 py-1.5 rounded-full bg-accent/10 text-accent dark:bg-accent/20 dark:text-purple-300 font-semibold text-sm mb-6 border border-accent/20">
+              Our Story
+            </div>
+            
+            <h2 className="text-2xl md:text-3xl font-extrabold text-secondary dark:text-white mb-6 leading-tight">
+              Built to help amazing businesses <span className="text-primary">stand out</span> online.
+            </h2>
+            
+            <p className="text-xl text-text/80 dark:text-gray-300 mb-12 leading-relaxed">
+              OneStep Digital is a Mogadishu-based creative agency focused on helping brands stand out. We build vibrant digital communities and manage high-performing campaigns to deliver real, measurable growth.
+            </p>
+            
+            <div className="inline-flex items-center justify-center px-8 py-6 bg-gray-50 dark:bg-slate-800 rounded-2xl border border-gray-100 dark:border-slate-700 shadow-sm">
+              <p className="text-xl md:text-2xl font-medium italic text-secondary dark:text-white">
+                "Ujeedadeennu waa mid fudud: inaan ganacsigaaga ka dhigno mid aan la iska indho tiri karin.""
+              </p>
+            </div>
+          </motion.div>
+          
         </div>
       </div>
     </section>

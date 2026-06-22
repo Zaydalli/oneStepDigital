@@ -7,7 +7,7 @@ export default function Process() {
   const steps = [
     {
       id: "01",
-      title: "Wadatashi (Consultation)",
+      title: "Consultation (Wadatashi)",
       description: "Waan ku dhagaysanaynaa si aan u fahamno ganacsigaaga, yoolkaaga iyo waxa aad higsanayso.",
       icon: <MessageSquare className="w-6 h-6 text-primary" />,
       gradient: "from-primary/20 to-transparent",
@@ -15,7 +15,7 @@ export default function Process() {
     },
     {
       id: "02",
-      title: "Qorsheyn (Strategy)",
+      title: "Strategy (Qorsheyn)",
       description: "Waxaan si taxadar leh u dajinaynaa qorshe suuqgeyn oo casri ah oo ku habboon baahidaada gaarka ah.",
       icon: <Target className="w-6 h-6 text-accent" />,
       gradient: "from-accent/20 to-transparent",
@@ -23,7 +23,7 @@ export default function Process() {
     },
     {
       id: "03",
-      title: "Fulin & Korriin (Launch & Grow)",
+      title: "Launch & Grow (Fulin & Korriin)",
       description: "Waan fulinaynaa qorshihii iyadoo tayadiisu sarreyso, waxaana la soconaynaa isbedelka si aad natiijo u aragto.",
       icon: <Rocket className="w-6 h-6 text-green-500" />,
       gradient: "from-green-500/20 to-transparent",
@@ -45,7 +45,7 @@ export default function Process() {
               Sida Aan U Shaqayno
             </div>
             <h2 className="text-3xl md:text-5xl font-bold text-secondary dark:text-white mb-6">
-              Sedex Tallaabo oo Fudud
+              Three Simple Steps
             </h2>
             <p className="text-lg text-text/80 dark:text-gray-300">
               Kaliya waqti yar na sii, annaguna waxaan diyaarinaynaa waddo kasta oo uu ganacsigaagu ku koro.

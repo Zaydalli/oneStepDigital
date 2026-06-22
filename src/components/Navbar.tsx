@@ -22,6 +22,7 @@ export default function Navbar() {
     { name: "Home", href: "#" },
     { name: "About", href: "#about" },
     { name: "Services", href: "#services" },
+    { name: "Process", href: "#process" },
     { name: "Pricing", href: "#pricing" },
     { name: "Contact", href: "#contact" },
   ];
@@ -38,10 +39,10 @@ export default function Navbar() {
         {/* Logo */}
         <div className="flex items-center">
           <Image 
-            src="/logo.jpg.png" 
+            src="/logo.webp" 
             alt="OneStep Digital Logo" 
-            width={240} 
-            height={80} 
+            width={250} 
+            height={85} 
             className="h-20 w-auto"
             priority
           />

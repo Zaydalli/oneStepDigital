@@ -5,16 +5,31 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Mail, MessageCircle, MapPin, Send, CheckCircle2, AlertCircle } from "lucide-react";
 
 export default function Contact() {
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
+  const [formData, setFormData] = useState({ name: "", email: "", message: "", _honey: "" });
+  const [formStatus, setFormStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+
+  const heading = "Aan wada shaqayno";
+  const description = "Diyaar ma u tahay inaad ganacsigaaga heer cusub gaarsiiso? Nala soo xiriir si aan u bilowno shaqo wacan.";
+  const emailLabel = "Email Us";
+  const whatsappLabel = "WhatsApp";
+  const locationLabel = "Location";
+  const formHeading = "Send us a message";
+  const successMsg = "Message sent successfully!";
+  const errorMsg = "Failed to send message. Please try again.";
+  const fullNameLabel = "Full Name";
+  const fullNamePlaceholder = "Enter your full name";
+  const emailInputLabel = "Email Address";
+  const emailInputPlaceholder = "Enter your email address";
+  const messageLabel = "Message";
+  const messagePlaceholder = "Type your message here...";
+  const sending = "Sending...";
+  const send = "Send Message";
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitStatus("idle");
+    setFormStatus("submitting");
     try {
-      await fetch("https://formsubmit.co/ajax/info@onestepdigital.co", {
+      const response = await fetch("https://formsubmit.co/ajax/info@onestepdigital.co", {
         method: "POST",
         headers: { 
             'Content-Type': 'application/json',
@@ -24,20 +39,25 @@ export default function Contact() {
             name: formData.name,
             email: formData.email,
             message: formData.message,
+            _honey: formData._honey,
             _subject: `New Contact Form Submission from ${formData.name}`
         })
       });
-      setSubmitStatus("success");
-      setFormData({ name: "", email: "", message: "" });
-      setTimeout(() => setSubmitStatus("idle"), 5000);
+
+      if (!response.ok) {
+        throw new Error("Failed to send message");
+      }
+
+      setFormStatus("success");
+      setFormData({ name: "", email: "", message: "", _honey: "" });
+      setTimeout(() => setFormStatus("idle"), 5000);
     } catch (error) {
       console.error(error);
-      setSubmitStatus("error");
-      setTimeout(() => setSubmitStatus("idle"), 5000);
-    } finally {
-      setIsSubmitting(false);
+      setFormStatus("error");
+      setTimeout(() => setFormStatus("idle"), 5000);
     }
   };
+
   return (
     <section id="contact" className="py-[120px] bg-gray-50 dark:bg-slate-800 relative overflow-hidden">
       {/* Decorative gradients */}
@@ -55,9 +75,9 @@ export default function Contact() {
             transition={{ duration: 0.6 }}
           >
             <div className="lg:pr-12">
-            <h2 className="text-3xl md:text-5xl font-extrabold text-secondary dark:text-white mb-6">Let's work together</h2>
+            <h2 className="text-3xl md:text-5xl font-extrabold text-secondary dark:text-white mb-6">{heading}</h2>
             <p className="text-lg text-text/80 dark:text-gray-300 mb-12 max-w-md">
-              Ready to take your digital presence to the next level? Reach out to us and let's start building something great.
+              {description}
             </p>
 
             <div className="space-y-8">
@@ -66,7 +86,7 @@ export default function Contact() {
                   <Mail size={24} />
                 </div>
                 <div>
-                  <div className="text-sm text-text/60 dark:text-gray-400 mb-1">Email Us</div>
+                  <div className="text-sm text-text/60 dark:text-gray-400 mb-1">{emailLabel}</div>
                   <div className="text-lg font-bold text-secondary dark:text-white group-hover:text-primary transition-colors">
                     info@onestepdigital.co
                   </div>
@@ -78,7 +98,7 @@ export default function Contact() {
                   <MessageCircle size={24} />
                 </div>
                 <div>
-                  <div className="text-sm text-text/60 dark:text-gray-400 mb-1">WhatsApp</div>
+                  <div className="text-sm text-text/60 dark:text-gray-400 mb-1">{whatsappLabel}</div>
                   <div className="text-lg font-bold text-secondary dark:text-white group-hover:text-green-500 transition-colors">
                     +252 687 683651
                   </div>
@@ -90,7 +110,7 @@ export default function Contact() {
                   <MapPin size={24} />
                 </div>
                 <div>
-                  <div className="text-sm text-text/60 dark:text-gray-400 mb-1">Location</div>
+                  <div className="text-sm text-text/60 dark:text-gray-400 mb-1">{locationLabel}</div>
                   <div className="text-lg font-bold text-secondary dark:text-white">
                     Mogadishu, Somalia
                   </div>
@@ -108,10 +128,10 @@ export default function Contact() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="bg-white dark:bg-slate-900 p-8 md:p-10 rounded-[24px] shadow-xl border border-gray-200 dark:border-slate-800/50"
           >
-            <h3 className="text-2xl font-bold text-secondary dark:text-white mb-6">Send us a message</h3>
+            <h3 className="text-2xl font-bold text-secondary dark:text-white mb-6">{formHeading}</h3>
             
             <AnimatePresence>
-              {submitStatus === "success" && (
+              {formStatus === "success" && (
                 <motion.div
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -119,10 +139,10 @@ export default function Contact() {
                   className="mb-6 p-4 bg-green-50 border border-green-200 text-green-700 rounded-xl flex items-start gap-3"
                 >
                   <CheckCircle2 className="w-5 h-5 shrink-0 mt-0.5" />
-                  <p className="text-sm font-medium leading-relaxed">Message sent successfully!</p>
+                  <p className="text-sm font-medium leading-relaxed">{successMsg}</p>
                 </motion.div>
               )}
-              {submitStatus === "error" && (
+              {formStatus === "error" && (
                 <motion.div
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -130,17 +150,26 @@ export default function Contact() {
                   className="mb-6 p-4 bg-red-50 border border-red-200 text-red-700 rounded-xl flex items-start gap-3"
                 >
                   <AlertCircle className="w-5 h-5 shrink-0 mt-0.5" />
-                  <p className="text-sm font-medium leading-relaxed"> Failed to send message. Please try again.</p>
+                  <p className="text-sm font-medium leading-relaxed">{errorMsg}</p>
                 </motion.div>
               )}
             </AnimatePresence>
 
             <form className="space-y-6" onSubmit={handleSubmit}>
+              <input 
+                type="text" 
+                name="_honey" 
+                style={{ display: "none" }} 
+                value={formData._honey} 
+                onChange={(e) => setFormData({ ...formData, _honey: e.target.value })} 
+                tabIndex={-1}
+                autoComplete="off"
+              />
               <div>
-                <label className="block text-sm font-medium text-secondary dark:text-gray-200 mb-2">Full Name</label>
+                <label className="block text-sm font-medium text-secondary dark:text-gray-200 mb-2">{fullNameLabel}</label>
                 <input 
                   type="text" 
-                  placeholder="John Doe"
+                  placeholder={fullNamePlaceholder}
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   required
@@ -149,10 +178,10 @@ export default function Contact() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-secondary dark:text-gray-200 mb-2">Email Address</label>
+                <label className="block text-sm font-medium text-secondary dark:text-gray-200 mb-2">{emailInputLabel}</label>
                 <input 
                   type="email" 
-                  placeholder="john@example.com"
+                  placeholder={emailInputPlaceholder}
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   required
@@ -161,9 +190,9 @@ export default function Contact() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-secondary dark:text-gray-200 mb-2">Message</label>
+                <label className="block text-sm font-medium text-secondary dark:text-gray-200 mb-2">{messageLabel}</label>
                 <textarea 
-                  placeholder="How can we help you?"
+                  placeholder={messagePlaceholder}
                   rows={4}
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
@@ -174,11 +203,11 @@ export default function Contact() {
 
               <button 
                 type="submit"
-                disabled={isSubmitting}
+                disabled={formStatus === "submitting"}
                 className="w-full flex items-center justify-center gap-2 bg-primary text-white py-4 rounded-xl font-medium hover:bg-primary/90 transition-all shadow-md hover:shadow-lg disabled:opacity-70 disabled:cursor-not-allowed"
               >
-                {isSubmitting ? "Sending..." : "Send Message"}
-                {!isSubmitting && <Send size={18} />}
+                {formStatus === "submitting" ? sending : send}
+                {formStatus !== "submitting" && <Send size={18} />}
               </button>
             </form>
           </motion.div>
