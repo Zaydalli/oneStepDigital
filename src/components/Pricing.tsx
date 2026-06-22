@@ -25,8 +25,8 @@ export default function Pricing() {
         "1 Welcome / Offer Post",
         "Final QR, Link & WhatsApp Test"
       ],
-      supportNote: "After handover, any modifications or extra work will be charged separately.",
-      noteLabel: "Support Terms:"
+      supportNote: "Wareejinta shaqada kadib, wixii wax ka beddel ah ama shaqo dheeri ah si gaar ah ayaa loo xisaabinayaa.",
+      noteLabel: "Shuruudda Taageerada:"
     },
     {
       name: "CONTENT BOOST",
@@ -38,8 +38,8 @@ export default function Pricing() {
         "Editing & Text Captions",
         "Ready-to-Post Files"
       ],
-      supportNote: "This package is for content creation only. The client is responsible for posting.",
-      noteLabel: "Note:"
+      supportNote: "Xirmadani waa abuuris muuqaal keliya. Macmiilka ayaa la wareegaya oo isagu post-gareynaya.",
+      noteLabel: "FG:"
     },
     {
       name: "GROWTH MANAGEMENT",
@@ -51,8 +51,8 @@ export default function Pricing() {
         "Posting (Facebook / Instagram / TikTok)",
         "Content Plan & Monthly Report"
       ],
-      supportNote: "This package does not include Meta Ads budget or replying to messages (DMs/Comments).",
-      noteLabel: "Note:"
+      supportNote: "Xirmadani kuma jirto bixinta lacagta Meta Ads-ka iyo u jawaabidda farriimaha (DMs/Comments).",
+      noteLabel: "FG:"
     }
   ];
 

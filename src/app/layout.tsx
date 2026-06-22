@@ -20,7 +20,7 @@ export default function RootLayout({
       <body className={`${inter.className} bg-white dark:bg-slate-950 text-slate-800 dark:text-slate-100 antialiased`}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="light"
           enableSystem
           disableTransitionOnChange
         >

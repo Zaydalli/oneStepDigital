@@ -34,7 +34,7 @@ export default function About() {
             
             <div className="inline-flex items-center justify-center px-8 py-6 bg-gray-50 dark:bg-slate-800 rounded-2xl border border-gray-100 dark:border-slate-700 shadow-sm">
               <p className="text-xl md:text-2xl font-medium italic text-secondary dark:text-white">
-                "Ujeedadeennu waa mid fudud: inaan ganacsigaaga ka dhigno mid aan la iska indho tiri karin.""
+                "Ujeedadeennu waa mid fudud: inaan ganacsigaaga ka dhigno mid aan la iska indho tiri karin."
               </p>
             </div>
           </motion.div>
