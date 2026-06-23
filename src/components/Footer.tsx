@@ -26,7 +26,14 @@ export default function Footer() {
               alt="OneStep Digital Logo" 
               width={300} 
               height={100} 
-              className="h-16 w-auto"
+              className="h-16 w-auto dark:hidden"
+            />
+            <Image 
+              src="/dark mode logo.webp" 
+              alt="OneStep Digital Logo Dark" 
+              width={300} 
+              height={100} 
+              className="h-16 w-auto hidden dark:block"
             />
           </div>
           <p className="text-text/70 dark:text-gray-400 max-w-sm mb-8 text-sm leading-relaxed">

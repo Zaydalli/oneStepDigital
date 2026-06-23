@@ -43,7 +43,15 @@ export default function Navbar() {
             alt="OneStep Digital Logo" 
             width={250} 
             height={85} 
-            className="h-20 w-auto"
+            className="h-20 w-auto dark:hidden"
+            priority
+          />
+          <Image 
+            src="/dark mode logo.webp" 
+            alt="OneStep Digital Logo Dark" 
+            width={250} 
+            height={85} 
+            className="h-20 w-auto hidden dark:block"
             priority
           />
         </div>
