@@ -3,10 +3,21 @@
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 
+interface Plan {
+  name: string;
+  subtitle?: string;
+  period: string;
+  features: string[];
+  supportNote: string;
+  noteLabel: string;
+  price: string;
+  recommended: boolean;
+}
+
 export default function Pricing() {
   const heading = "Simple, Transparent Pricing";
   const description = "Dooro xirmada kugu habboon si aad u dardar geliso kobocaaga dijitaalka ah. Ma jiraan lacago qarsoon.";
-  const button = "Choose Plan";
+  const button = "Order This Plan";
   const customHeading = "Looking for Custom Services?";
   const customDescription = "Website Development, Logo Design, Meta Ads Management, and more. Let's build a package that fits your exact needs.";
   const customButton = "Contact for Custom Quote";
@@ -62,7 +73,7 @@ export default function Pricing() {
     { price: "$200", recommended: false }
   ];
 
-  const plans = plansData.map((plan, index) => ({
+  const plans: Plan[] = plansData.map((plan, index) => ({
     ...plan,
     ...planBase[index]
   }));
@@ -100,8 +111,8 @@ export default function Pricing() {
               
               <div className="mb-8">
                 <h3 className="text-xl font-bold text-secondary dark:text-white mb-1">{plan.name}</h3>
-                {(plan as any).subtitle && (
-                  <p className="text-sm text-text/60 dark:text-gray-400 mb-4">{(plan as any).subtitle}</p>
+                {plan.subtitle && (
+                  <p className="text-sm text-text/60 dark:text-gray-400 mb-4">{plan.subtitle}</p>
                 )}
                 <div className="flex items-baseline gap-1">
                   <span className="text-4xl font-extrabold text-secondary dark:text-white">{plan.price}</span>
@@ -118,16 +129,16 @@ export default function Pricing() {
                 ))}
               </ul>
 
-              {(plan as any).supportNote && (
+              {plan.supportNote && (
                 <div className="bg-gray-50 dark:bg-slate-800/50 p-4 rounded-xl mb-8 border border-gray-100 dark:border-slate-800">
                   <p className="text-xs text-text/70 dark:text-gray-400 leading-relaxed">
-                    <span className="font-semibold text-secondary dark:text-white">{(plan as any).noteLabel}</span> {(plan as any).supportNote}
+                    <span className="font-semibold text-secondary dark:text-white">{plan.noteLabel}</span> {plan.supportNote}
                   </p>
                 </div>
               )}
 
               <a 
-                href={`https://wa.me/252687683651?text=Hi, I'm interested in the ${plan.name} plan.`}
+                href={`https://wa.me/252687683651?text=${encodeURIComponent(`Asc, waxaan rabaa ${plan.name} plan (${plan.price}). Magacaygu waa ___, ganacsigayguna waa ___.`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`block text-center w-full py-4 rounded-xl font-medium transition-all ${

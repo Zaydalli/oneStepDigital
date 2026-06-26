@@ -11,7 +11,7 @@ export default function Footer() {
   const company = ["About Us", "Contact", "Pricing", "Process"];
   const legalHeading = "Legal";
   const legal = ["Privacy Policy", "Terms of Service", "Cookie Policy", "Refund Policy"];
-  const rights = "© 2026 OneStep Digital. All rights reserved.";
+  const rights = "\u00A9 2026 OneStep Digital. All rights reserved.";
   const built = "Proudly built in Somalia";
 
   return (

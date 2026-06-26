@@ -7,6 +7,7 @@ import { Analytics } from "@vercel/analytics/react";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://onestepdigital.co"),
   title: "OneStep Digital | Digital Marketing Agency",
   description: "Hal tallaabo ku casriyee ganacsigaaga oo soo jiido macaamiil cusub. Waxaan bixinaa adeegyo suuqgeyn dhijitaal ah oo casri ah.",
   keywords: ["OneStep Digital", "Marketing Agency", "Somalia", "Digital Marketing", "Web Development", "Content Creation", "SEO", "Suuqgeyn"],

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 export default function Hero() {
   return (
@@ -49,9 +50,12 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="relative w-full hidden lg:flex items-center justify-center"
         >
-          <img 
+          <Image 
             src="/screen.webp" 
             alt="Marketing Dashboard" 
+            width={1200}
+            height={800}
+            priority
             className="w-full h-auto rounded-2xl shadow-2xl border border-gray-200 dark:border-slate-800"
           />
         </motion.div>

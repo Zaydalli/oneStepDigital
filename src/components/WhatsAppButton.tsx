@@ -57,7 +57,7 @@ export default function WhatsAppButton() {
               transition={{ delay: 0.2 }}
               className="bg-gray-50 dark:bg-slate-800 rounded-[20px] p-5 mb-6 text-text/80 text-[15px] leading-relaxed"
             >
-              <p className="font-medium text-secondary mb-2 text-base">Assalamu Alaikum! 👋</p>
+              <p className="font-medium text-secondary mb-2 text-base">Assalamu Alaikum! &#x1F44B;</p>
               <p>
                 Ma u baahan tahay caawimaad? Nala soo xiriir si aan kaaga caawinno kobcinta ganacsigaaga dijitaalka ah!
               </p>
