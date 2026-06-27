@@ -65,7 +65,7 @@ export default function WhatsAppButton() {
 
             {/* Start Chat Button */}
             <a 
-              href="https://wa.me/252687683651"
+              href="https://wa.me/252615894875"
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setIsOpen(false)}

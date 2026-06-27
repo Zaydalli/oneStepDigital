@@ -93,14 +93,14 @@ export default function Contact() {
                 </div>
               </a>
 
-              <a href="https://wa.me/252687683651" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group">
+              <a href="https://wa.me/252615894875" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group">
                 <div className="w-14 h-14 bg-white dark:bg-slate-900 rounded-2xl flex items-center justify-center shadow-sm group-hover:shadow-md group-hover:scale-105 transition-all text-green-500 border border-gray-200 dark:border-slate-800/50">
                   <MessageCircle size={24} />
                 </div>
                 <div>
                   <div className="text-sm text-text/60 dark:text-gray-400 mb-1">{whatsappLabel}</div>
                   <div className="text-lg font-bold text-secondary dark:text-white group-hover:text-green-500 transition-colors">
-                    +252 687 683651
+                    +252 615 894875
                   </div>
                 </div>
               </a>

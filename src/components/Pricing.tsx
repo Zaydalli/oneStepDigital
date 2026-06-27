@@ -138,7 +138,7 @@ export default function Pricing() {
               )}
 
               <a 
-                href={`https://wa.me/252687683651?text=${encodeURIComponent(`Asc, waxaan rabaa ${plan.name} plan (${plan.price}). Magacaygu waa ___, ganacsigayguna waa ___.`)}`}
+                href={`https://wa.me/252615894875?text=${encodeURIComponent(`Asc, waxaan rabaa ${plan.name} plan (${plan.price}). Magacaygu waa ___, ganacsigayguna waa ___.`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`block text-center w-full py-4 rounded-xl font-medium transition-all ${
