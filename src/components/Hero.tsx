@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section id="home" className="relative min-h-screen flex items-center pt-24 overflow-hidden bg-white dark:bg-slate-950">
+    <section id="home" className="relative lg:min-h-screen flex items-center pt-32 pb-20 lg:pt-24 lg:pb-0 overflow-hidden bg-white dark:bg-slate-950">
       {/* Background Gradients */}
       <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-accent/20 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-primary/10 rounded-full blur-[120px] pointer-events-none" />
