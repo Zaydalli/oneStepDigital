@@ -30,14 +30,11 @@ export default function About() {
             
             <div className="text-lg md:text-xl text-text/80 dark:text-gray-300 mb-12 leading-relaxed space-y-6 text-left">
               <p>
-                Muqdisho waa suuq si degdeg ah u kobcaya, halkaas oo xawaaruhu go'aamiyo guusha ganacsiga. Haddii dalabaadkaagu ku tiirsan yihiin WhatsApp caadi ah, fariimo is dhex yaacsan, ama shaqaale mashquul ah, waxaa jirta fursad weyn oo aad ku luminayso macaamiil iyo dakhli.
-              </p>
+                Muqdisho waa suuq si degdeg ah u kobcaya, halkaas oo xawaaruhu go’aamiyo guusha ganacsiga. Ku tiirsanaanta WhatsApp ama fariimo is dhex yaacsan waxay keeni kartaa luminta macaamiil iyo dakhli.              </p>
               <p>
-                OneStep Digital looma aasaasin oo keliya naqshado qurux badan. Waxaan dhisnaa Ordering Engine casri ah oo fududeeya habka dalabka laga bilaabo helitaanka Menu-gaaga ama Catalog-kaaga ilaa dalabka oo si nidaamsan kuugu soo dhaca.
-              </p>
+                OneStep Digital waxay dhistaa Ordering Engine casri ah oo ka dhigaya dalabaadkaaga kuwo nidaamsan, laga bilaabo Menu-ga ilaa helitaanka dalabka.              </p>
               <p>
-                Nidaamkayagu wuxuu kuu shaqeeyaa 24/7, isagoo yareynaya khaladaadka, dedejinaya adeegga, isla markaana kuu oggolaanaya inaad kordhiso iibka adigoon shaqaale cusub qoran.
-              </p>
+                Nidaamku wuxuu shaqeeyaa 24/7, wuxuuna yareeyaa khaladaadka, dedejiyaa adeegga, isla markaana kordhiya iibka adigoon shaqaale dheeraad ah u baahnayn.              </p>
             </div>
             
             <div className="inline-flex items-center justify-center px-8 py-6 bg-gray-50 dark:bg-slate-800 rounded-2xl border border-gray-100 dark:border-slate-700 shadow-sm w-full">
