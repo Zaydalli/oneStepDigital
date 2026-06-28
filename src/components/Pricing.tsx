@@ -15,12 +15,12 @@ interface Plan {
 }
 
 export default function Pricing() {
-  const heading = "Simple, Transparent Pricing";
+  const heading = "Qiimo Fudud oo Cad";
   const description = "Dooro xirmada kugu habboon si aad u dardar geliso kobocaaga dijitaalka ah. Ma jiraan lacago qarsoon.";
-  const button = "Order This Plan";
-  const customHeading = "Looking for Custom Services?";
-  const customDescription = "Website Development, Logo Design, Meta Ads Management, and more. Let's build a package that fits your exact needs.";
-  const customButton = "Contact for Custom Quote";
+  const button = "Dalbo Xirmadan";
+  const customHeading = "Ma U Baahan Tahay Adeegyo Gaar Ah?";
+  const customDescription = "Dhisidda Website-yada, Naqshadaynta Logo-da, Maareynta Meta Ads, Muuqaallada Xayeysiiska AI iyo in ka badan. Aan kuu samayno xirmo si buuxda ugu habboon baahidaada gaarka ah.";
+  const customButton = "Dalbo Qiimeyn Gaar ah";
 
   const plansData = [
     {

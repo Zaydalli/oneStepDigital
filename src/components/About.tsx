@@ -21,20 +21,28 @@ export default function About() {
             className="bg-white dark:bg-slate-900 rounded-[32px] shadow-xl border border-gray-200 dark:border-slate-800 p-8 md:p-16 relative z-10"
           >
             <div className="inline-block px-4 py-1.5 rounded-full bg-accent/10 text-accent dark:bg-accent/20 dark:text-purple-300 font-semibold text-sm mb-6 border border-accent/20">
-              Our Story
+              Dhibaatada & Xalka
             </div>
             
             <h2 className="text-2xl md:text-3xl font-extrabold text-secondary dark:text-white mb-6 leading-tight">
-              Built to help amazing businesses <span className="text-primary">stand out</span> online.
+              Ganacsiyada Casriga Ah Uma Baahna Mashquul, Waxay U Baahan Yihiin <span className="text-primary">Nidaam</span>.
             </h2>
             
-            <p className="text-xl text-text/80 dark:text-gray-300 mb-12 leading-relaxed">
-              OneStep Digital is a Mogadishu-based creative agency focused on helping brands stand out. We build vibrant digital communities and manage high-performing campaigns to deliver real, measurable growth.
-            </p>
+            <div className="text-lg md:text-xl text-text/80 dark:text-gray-300 mb-12 leading-relaxed space-y-6 text-left">
+              <p>
+                Muqdisho waa suuq si degdeg ah u kobcaya, halkaas oo xawaaruhu go'aamiyo guusha ganacsiga. Haddii dalabaadkaagu ku tiirsan yihiin WhatsApp caadi ah, fariimo is dhex yaacsan, ama shaqaale mashquul ah, waxaa jirta fursad weyn oo aad ku luminayso macaamiil iyo dakhli.
+              </p>
+              <p>
+                OneStep Digital looma aasaasin oo keliya naqshado qurux badan. Waxaan dhisnaa Ordering Engine casri ah oo fududeeya habka dalabka laga bilaabo helitaanka Menu-gaaga ama Catalog-kaaga ilaa dalabka oo si nidaamsan kuugu soo dhaca.
+              </p>
+              <p>
+                Nidaamkayagu wuxuu kuu shaqeeyaa 24/7, isagoo yareynaya khaladaadka, dedejinaya adeegga, isla markaana kuu oggolaanaya inaad kordhiso iibka adigoon shaqaale cusub qoran.
+              </p>
+            </div>
             
-            <div className="inline-flex items-center justify-center px-8 py-6 bg-gray-50 dark:bg-slate-800 rounded-2xl border border-gray-100 dark:border-slate-700 shadow-sm">
+            <div className="inline-flex items-center justify-center px-8 py-6 bg-gray-50 dark:bg-slate-800 rounded-2xl border border-gray-100 dark:border-slate-700 shadow-sm w-full">
               <p className="text-xl md:text-2xl font-medium italic text-secondary dark:text-white">
-                "Ujeedadeennu waa mid fudud: inaan ganacsigaaga ka dhigno mid aan la iska indho tiri karin."
+                "Hadafkeenna waa inaan nidaam u beddelno mashquulkaaga, si adiguna aad diiradda u saarto kobcinta ganacsigaaga."
               </p>
             </div>
           </motion.div>

@@ -45,7 +45,7 @@ export default function Process() {
               Sida Aan U Shaqayno
             </div>
             <h2 className="text-3xl md:text-5xl font-bold text-secondary dark:text-white mb-6">
-              Three Simple Steps
+              Saddex Tallaabo Oo Fudud
             </h2>
             <p className="text-lg text-text/80 dark:text-gray-300">
               Kaliya waqti yar na sii, annaguna waxaan diyaarinaynaa waddo kasta oo uu ganacsigaagu ku koro.

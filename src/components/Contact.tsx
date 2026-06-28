@@ -5,25 +5,27 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Mail, MessageCircle, MapPin, Send, CheckCircle2, AlertCircle } from "lucide-react";
 
 export default function Contact() {
-  const [formData, setFormData] = useState({ name: "", email: "", message: "", _honey: "" });
+  const [formData, setFormData] = useState({ name: "", businessName: "", whatsapp: "", message: "", _honey: "" });
   const [formStatus, setFormStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
 
-  const heading = "Aan wada shaqayno";
-  const description = "Diyaar ma u tahay inaad ganacsigaaga heer cusub gaarsiiso? Nala soo xiriir si aan u bilowno shaqo wacan.";
-  const emailLabel = "Email Us";
+  const heading = "Diyaar Ma U Tahay Inaad Nidaamiso Ganacsigaaga?";
+  const description = "Soo buuxi foomkan kooban, kooxdeena ayaa kula soo xiriiri doonta si aan kuugu samayno bandhig toos ah (Live Demo).";
+  const emailLabel = "Email";
   const whatsappLabel = "WhatsApp";
   const locationLabel = "Location";
-  const formHeading = "Send us a message";
-  const successMsg = "Message sent successfully!";
-  const errorMsg = "Failed to send message. Please try again.";
-  const fullNameLabel = "Full Name";
-  const fullNamePlaceholder = "Enter your full name";
-  const emailInputLabel = "Email Address";
-  const emailInputPlaceholder = "Enter your email address";
-  const messageLabel = "Message";
-  const messagePlaceholder = "Type your message here...";
-  const sending = "Sending...";
-  const send = "Send Message";
+  const formHeading = "Fariin Noo Soo Dir";
+  const successMsg = "Fariintaada waa la diray!";
+  const errorMsg = "Cilad ayaa dhacday. Fadlan mar kale isku day.";
+  const fullNameLabel = "Magacaaga (Full Name)";
+  const fullNamePlaceholder = "Gali magacaaga oo buuxa";
+  const businessNameLabel = "Magaca Ganacsiga (Business Name)";
+  const businessNamePlaceholder = "Gali magaca ganacsigaaga";
+  const whatsappNumberLabel = "Lambarka WhatsApp-ka (WhatsApp Number)";
+  const whatsappNumberPlaceholder = "Gali lambarkaaga WhatsApp-ka";
+  const messageLabel = "Fariintaada (Message)";
+  const messagePlaceholder = "Halkan ku qor fariintaada...";
+  const sending = "Waa la dirayaa...";
+  const send = "Dir Fariinta";
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -37,7 +39,8 @@ export default function Contact() {
         },
         body: JSON.stringify({
             name: formData.name,
-            email: formData.email,
+            businessName: formData.businessName,
+            whatsapp: formData.whatsapp,
             message: formData.message,
             _honey: formData._honey,
             _subject: `New Contact Form Submission from ${formData.name}`
@@ -49,7 +52,7 @@ export default function Contact() {
       }
 
       setFormStatus("success");
-      setFormData({ name: "", email: "", message: "", _honey: "" });
+      setFormData({ name: "", businessName: "", whatsapp: "", message: "", _honey: "" });
       setTimeout(() => setFormStatus("idle"), 5000);
     } catch (error) {
       console.error(error);
@@ -178,12 +181,24 @@ export default function Contact() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-secondary dark:text-gray-200 mb-2">{emailInputLabel}</label>
+                <label className="block text-sm font-medium text-secondary dark:text-gray-200 mb-2">{businessNameLabel}</label>
                 <input 
-                  type="email" 
-                  placeholder={emailInputPlaceholder}
-                  value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  type="text" 
+                  placeholder={businessNamePlaceholder}
+                  value={formData.businessName}
+                  onChange={(e) => setFormData({ ...formData, businessName: e.target.value })}
+                  required
+                  className="w-full px-5 py-4 rounded-xl bg-gray-50 dark:bg-slate-800 dark:bg-background border border-gray-200 dark:border-slate-800 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all dark:text-white"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-secondary dark:text-gray-200 mb-2">{whatsappNumberLabel}</label>
+                <input 
+                  type="tel" 
+                  placeholder={whatsappNumberPlaceholder}
+                  value={formData.whatsapp}
+                  onChange={(e) => setFormData({ ...formData, whatsapp: e.target.value })}
                   required
                   className="w-full px-5 py-4 rounded-xl bg-gray-50 dark:bg-slate-800 dark:bg-background border border-gray-200 dark:border-slate-800 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all dark:text-white"
                 />

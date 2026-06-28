@@ -25,20 +25,20 @@ export default function Hero() {
           </div>
           
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-secondary dark:text-white leading-[1.1] mb-6">
-            Hal tallaabo ku <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-500 dark:from-blue-400 dark:to-cyan-300">casriyee</span> ganacsigaaga oo soo jiido macaamiil cusub.
+            Jooji Luminta Macaamiisha. <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-500 dark:from-blue-400 dark:to-cyan-300">Nidaami Dalabaadkaaga.</span>
           </h1>
           
           <p className="text-lg text-text/80 dark:text-gray-300 mb-8 leading-relaxed">
-            We help businesses build a modern digital presence and reach more customers effectively.
+            Macaamiishu ma sugaan adeeg gaabis ah. OneStep Digital waxay ganacsigaaga u dhisaysaa nidaam dijitaal ah oo dedejiya dalabaadka, yareeya khaladaadka, kana dhiga ganacsigaaga mid fudud oo xirfadaysan.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
-            <a href="#contact" className="flex items-center justify-center gap-2 bg-primary text-white px-8 py-4 rounded-xl font-medium hover:bg-primary/90 hover:scale-105 transition-all shadow-lg shadow-primary/25">
-              Get Started
+            <a href="https://wa.me/252615894875" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-primary text-white px-8 py-4 rounded-xl font-medium hover:bg-primary/90 hover:scale-105 transition-all shadow-lg shadow-primary/25">
+              Dalbo Demo Toos Ah
               <ArrowRight size={18} />
             </a>
             <a href="#contact" className="flex items-center justify-center bg-white dark:bg-slate-900 text-secondary dark:text-white px-8 py-4 rounded-xl font-medium hover:bg-gray-50 dark:bg-slate-800 border border-gray-200 dark:border-slate-800 transition-all">
-              Request a Quote
+              Nala Hadal
             </a>
           </div>
         </motion.div>

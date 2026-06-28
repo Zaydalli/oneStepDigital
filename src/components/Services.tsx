@@ -53,9 +53,9 @@ export default function Services() {
     <section id="services" className="py-[120px] bg-gray-50 dark:bg-slate-800">
       <div className="max-w-[1280px] mx-auto px-6 lg:px-12">
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-secondary dark:text-white mb-6">Our Services</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-secondary dark:text-white mb-6">Adeegyadeenna</h2>
           <p className="text-lg text-text/80 dark:text-gray-300">
-            Comprehensive digital marketing solutions designed to elevate your brand and drive results.
+            Xalal dijitaal ah oo casri ah, loona habeeyey inay fududeeyaan shaqada ganacsigaaga, kordhiyaan muuqaalkaaga, kana caawiyaan inaad gaarto macaamiil badan.
           </p>
         </div>
 
@@ -68,10 +68,10 @@ export default function Services() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ y: -5 }}
-              className="bg-white dark:bg-slate-900 rounded-[20px] shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-200 dark:border-slate-800/50 relative"
+              className="bg-white dark:bg-slate-900 rounded-[20px] shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-200 dark:border-slate-800/50 relative flex flex-col"
             >
               <div className={`h-2 w-full bg-gradient-to-r ${service.gradient}`} />
-              <div className="p-8">
+              <div className="p-8 flex flex-col flex-grow">
                 <div className="flex items-center gap-4 mb-6">
                   <div className="w-12 h-12 rounded-xl bg-gray-50 dark:bg-slate-800 flex items-center justify-center">
                     {service.icon}
@@ -79,7 +79,7 @@ export default function Services() {
                   <h3 className="text-2xl font-bold text-secondary dark:text-white">{service.title}</h3>
                 </div>
                 
-                <ul className="space-y-4">
+                <ul className="space-y-4 mb-8 flex-grow">
                   {service.features.map((feature, idx) => (
                     <li key={idx} className="flex items-start gap-3">
                       <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
@@ -87,6 +87,15 @@ export default function Services() {
                     </li>
                   ))}
                 </ul>
+                
+                <a 
+                  href="https://wa.me/252615894875" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="mt-auto w-full py-3.5 flex items-center justify-center gap-2 bg-primary/10 dark:bg-primary/20 text-primary dark:text-blue-400 hover:bg-primary hover:text-white dark:hover:bg-primary dark:hover:text-white font-medium rounded-xl transition-all"
+                >
+                  Dalbo Adeeggan
+                </a>
               </div>
             </motion.div>
           ))}
