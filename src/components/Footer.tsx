@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { Facebook, Instagram, Twitter, Linkedin, Github, Youtube } from "lucide-react";
 
 export default function Footer() {
@@ -84,13 +85,16 @@ export default function Footer() {
         <div>
           <h3 className="font-bold text-secondary dark:text-white mb-6">{legalHeading}</h3>
           <ul className="flex flex-col gap-4">
-            {legal.map((link) => (
-              <li key={link}>
-                <a href="#" className="text-sm text-text/70 dark:text-gray-400 hover:text-primary transition-colors">
-                  {link}
-                </a>
-              </li>
-            ))}
+            {legal.map((link) => {
+              const href = `/${link.toLowerCase().replace(/\s+/g, '-')}`;
+              return (
+                <li key={link}>
+                  <Link href={href} className="text-sm text-text/70 dark:text-gray-400 hover:text-primary transition-colors">
+                    {link}
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
         </div>
         

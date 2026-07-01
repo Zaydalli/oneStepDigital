@@ -25,7 +25,7 @@ export default function Hero() {
           </div>
           
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-secondary dark:text-white leading-[1.1] mb-6">
-            Jooji Luminta Macaamiisha. <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-500 dark:from-blue-400 dark:to-cyan-300">Nidaami Dalabaadkaaga.</span>
+            Jooji Luminta Macaamiisha <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-500 dark:from-blue-400 dark:to-cyan-300">Nidaami Dalabaadkaaga</span>
           </h1>
           
           <p className="text-lg text-text/80 dark:text-gray-300 mb-8 leading-relaxed">

@@ -30,7 +30,7 @@ export default function About() {
             
             <div className="text-lg md:text-xl text-text/80 dark:text-gray-300 mb-12 leading-relaxed space-y-6 text-left">
               <p>
-                Muqdisho waa suuq si degdeg ah u kobcaya, halkaas oo xawaaruhu go’aamiyo guusha ganacsiga. Ku tiirsanaanta WhatsApp ama fariimo is dhex yaacsan waxay keeni kartaa luminta macaamiil iyo dakhli.              </p>
+                Muqdisho waa suuq si degdeg ah u kobcaya, halkaas oo xawaaruhu go’aamiyo guusha ganacsiga, Ku tiirsanaanta WhatsApp ama fariimo is dhex yaacsan waxay keeni kartaa luminta macaamiil iyo dakhli.              </p>
               <p>
                 OneStep Digital waxay dhistaa Ordering Engine casri ah oo ka dhigaya dalabaadkaaga kuwo nidaamsan, laga bilaabo Menu-ga ilaa helitaanka dalabka.              </p>
               <p>
