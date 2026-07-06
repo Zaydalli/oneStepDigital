@@ -68,8 +68,8 @@ export default function Pricing() {
   ];
 
   const planBase = [
-    { price: "$120", recommended: false },
-    { price: "$150", recommended: true },
+    { price: "$120", recommended: true },
+    { price: "$150", recommended: false },
     { price: "$200", recommended: false }
   ];
 
@@ -104,8 +104,8 @@ export default function Pricing() {
               }`}
             >
               {plan.recommended && (
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-white px-4 py-1 rounded-full text-sm font-medium tracking-wide">
-                  PREMIUM
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-white px-4 py-1 rounded-full text-sm font-medium tracking-wide whitespace-nowrap">
+                  Ugu Habboon Billowga
                 </div>
               )}
               

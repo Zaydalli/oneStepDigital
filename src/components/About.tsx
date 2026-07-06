@@ -32,9 +32,8 @@ export default function About() {
               <p>
                 Muqdisho waa suuq si degdeg ah u kobcaya, halkaas oo xawaaruhu go’aamiyo guusha ganacsiga, Ku tiirsanaanta WhatsApp ama fariimo is dhex yaacsan waxay keeni kartaa luminta macaamiil iyo dakhli.              </p>
               <p>
-                OneStep Digital waxay dhistaa Ordering Engine casri ah oo ka dhigaya dalabaadkaaga kuwo nidaamsan, laga bilaabo Menu-ga ilaa helitaanka dalabka.              </p>
-              <p>
-                Nidaamku wuxuu shaqeeyaa 24/7, wuxuuna yareeyaa khaladaadka, dedejiyaa adeegga, isla markaana kordhiya iibka adigoon shaqaale dheeraad ah u baahnayn.              </p>
+                OneStep Digital waxay kuu dhiseysaa nidaam fudud oo isku xira QR Menu-gaaga, Google Maps-ka iyo WhatsApp-ka, si macaamiishu ay si degdeg ah kuugu helaan, toosna kuugula soo xiriiraan.
+              </p>
             </div>
             
             <div className="inline-flex items-center justify-center px-8 py-6 bg-gray-50 dark:bg-slate-800 rounded-2xl border border-gray-100 dark:border-slate-700 shadow-sm w-full">

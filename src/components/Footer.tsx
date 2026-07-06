@@ -1,23 +1,20 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { Facebook, Instagram, Twitter, Linkedin, Github, Youtube } from "lucide-react";
 
 export default function Footer() {
-  const description = "OneStep Digital helps businesses build their digital presence through creative marketing solutions, professional content creation, and growth strategies.";
-  const servicesHeading = "Services";
+  const description = "OneStep Digital waxay ganacsiyada u dhistaa nidaam dijitaal ah oo fududeynaya isku-xirka macaamiisha.";
+  const servicesHeading = "Adeegyada";
   const services = ["Digital Starter", "Content Boost", "Growth Management", "Custom Services"];
-  const companyHeading = "Company";
-  const company = ["About Us", "Contact", "Pricing", "Process"];
-  const legalHeading = "Legal";
-  const legal = ["Privacy Policy", "Terms of Service", "Cookie Policy", "Refund Policy"];
-  const rights = "\u00A9 2026 OneStep Digital. All rights reserved.";
-  const built = "Proudly built in Somalia";
+  const companyHeading = "Shirkadda";
+  const company = ["Ku Saabsan", "Nala Xiriir", "Qiimaha", "Hannaanka"];
+  const rights = "\u00A9 2026 OneStep Digital. Dhammaan xuquuqdu way dhowran tahay.";
+  const built = "Waxaa lagu sameeyay Soomaaliya";
 
   return (
     <footer className="bg-white dark:bg-slate-900 border-t border-gray-200 dark:border-slate-800 pt-16 pb-8">
-      <div className="max-w-[1280px] mx-auto px-6 lg:px-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
+      <div className="max-w-[1280px] mx-auto px-6 lg:px-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
         
         {/* Brand & Socials (Col-span 2) */}
         <div className="lg:col-span-2">
@@ -81,23 +78,6 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Legal */}
-        <div>
-          <h3 className="font-bold text-secondary dark:text-white mb-6">{legalHeading}</h3>
-          <ul className="flex flex-col gap-4">
-            {legal.map((link) => {
-              const href = `/${link.toLowerCase().replace(/\s+/g, '-')}`;
-              return (
-                <li key={link}>
-                  <Link href={href} className="text-sm text-text/70 dark:text-gray-400 hover:text-primary transition-colors">
-                    {link}
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-        
       </div>
 
       <div className="max-w-[1280px] mx-auto px-6 lg:px-12 pt-8 border-t border-gray-200 dark:border-slate-800 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-text/60 dark:text-gray-500">
