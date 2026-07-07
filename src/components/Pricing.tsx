@@ -144,7 +144,7 @@ export default function Pricing() {
                 className={`block text-center w-full py-4 rounded-xl font-medium transition-all ${
                   plan.recommended
                     ? "bg-primary text-white hover:bg-primary/90 shadow-md"
-                    : "bg-gray-50 dark:bg-slate-800 text-secondary dark:text-white hover:bg-gray-50 dark:bg-slate-800/80 border border-gray-200 dark:border-slate-800"
+                    : "bg-gray-50 dark:bg-slate-800 text-secondary dark:text-white hover:bg-gray-100 dark:hover:bg-slate-700 border border-gray-200 dark:border-slate-800"
                 }`}
               >
                 {button}

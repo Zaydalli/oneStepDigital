@@ -34,7 +34,7 @@ export default function WhatsAppButton() {
             {/* Close Button */}
             <button 
               onClick={() => setIsOpen(false)}
-              className="absolute top-4 right-4 text-text/40 hover:text-text/80 transition-colors bg-gray-50 dark:bg-slate-800 hover:bg-gray-50 dark:bg-slate-800/80 w-8 h-8 rounded-full flex items-center justify-center"
+              className="absolute top-4 right-4 text-text/40 hover:text-text/80 transition-colors bg-gray-50 dark:bg-slate-800 hover:bg-gray-100 dark:hover:bg-slate-700 w-8 h-8 rounded-full flex items-center justify-center"
             >
               <X size={18} />
             </button>
