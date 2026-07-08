@@ -25,7 +25,7 @@ export default function About() {
             </div>
             
             <h2 className="text-2xl md:text-3xl font-extrabold text-secondary dark:text-white mb-6 leading-tight">
-              Ganacsiyada Casriga Ah Uma Baahna Mashquul, Waxay U Baahan Yihiin <span className="text-primary">Nidaam</span>.
+              Ganacsiyada Casriga Ah Uma Baahna Mashquul Waxay U Baahan Yihiin <span className="text-primary">Nidaam</span>
             </h2>
             
             <div className="text-lg md:text-xl text-text/80 dark:text-gray-300 mb-12 leading-relaxed space-y-6 text-left">

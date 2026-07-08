@@ -10,9 +10,12 @@ export default function Services() {
       icon: <QrCode className="w-6 h-6 text-primary" />,
       features: [
         "QR / Digital Catalog Setup",
-        "WhatsApp Business Setup",
-        "Google Maps Setup",
-        "QR Display Cards"
+        "WhatsApp Business Setup & Optimization",
+        "Google Maps Setup + Photos",
+        "5 QR Stands / Display Cards",
+        "100 Logo Stickers",
+        "1 Welcome / Offer Post",
+        "Final QR, Link & WhatsApp Test"
       ],
       gradient: "from-primary to-accent"
     },
@@ -55,7 +58,7 @@ export default function Services() {
         <div className="text-center max-w-2xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-secondary dark:text-white mb-6">Adeegyadeenna</h2>
           <p className="text-lg text-text/80 dark:text-gray-300">
-            Xalal dijitaal ah oo casri ah, loona habeeyey inay fududeeyaan shaqada ganacsigaaga, kordhiyaan muuqaalkaaga, kana caawiyaan inaad gaarto macaamiil badan.
+            Xalal dijitaal ah oo casri ah, loona habeeyey inay fududeeyaan shaqada ganacsigaaga, kordhiyaan muuqaalkaaga, kaana caawinayaan inaad gaarto macaamiil badan.
           </p>
         </div>
 

@@ -31,8 +31,8 @@ export default function Navbar() {
     <header
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-sm border-b border-gray-200 dark:border-slate-800 h-20"
-          : "bg-transparent h-24"
+          ? "bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-sm border-b border-gray-200 dark:border-slate-800 h-24"
+          : "bg-transparent h-28"
       }`}
     >
       <div className="max-w-[1280px] mx-auto px-6 lg:px-12 h-full flex items-center justify-between">
@@ -41,17 +41,17 @@ export default function Navbar() {
           <Image 
             src="/logo.webp" 
             alt="OneStep Digital Logo" 
-            width={250} 
-            height={85} 
-            className="h-20 w-auto dark:hidden"
+            width={300} 
+            height={102} 
+            className="h-24 w-auto dark:hidden"
             priority
           />
           <Image 
             src="/dark mode logo.webp" 
             alt="OneStep Digital Logo Dark" 
-            width={250} 
-            height={85} 
-            className="h-20 w-auto hidden dark:block"
+            width={300} 
+            height={102} 
+            className="h-24 w-auto hidden dark:block"
             priority
           />
         </div>
