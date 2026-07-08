@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { Facebook, Instagram, Twitter, Linkedin, Github, Youtube } from "lucide-react";
 
 export default function Footer() {
   const description = "OneStep Digital waxay ganacsiyada u dhistaa nidaam dijitaal ah oo fududeynaya isku-xirka macaamiisha.";
@@ -34,17 +33,9 @@ export default function Footer() {
               className="h-16 w-auto hidden dark:block"
             />
           </div>
-          <p className="text-text/70 dark:text-gray-400 max-w-sm mb-8 text-sm leading-relaxed">
+          <p className="text-text/70 dark:text-gray-400 max-w-sm text-sm leading-relaxed">
             {description}
           </p>
-          <div className="flex items-center gap-4">
-            <a href="#" className="text-gray-400 dark:text-gray-500 hover:text-primary transition-colors"><Youtube size={20} /></a>
-            <a href="#" className="text-gray-400 dark:text-gray-500 hover:text-primary transition-colors"><Github size={20} /></a>
-            <a href="#" className="text-gray-400 dark:text-gray-500 hover:text-primary transition-colors"><Instagram size={20} /></a>
-            <a href="#" className="text-gray-400 dark:text-gray-500 hover:text-primary transition-colors"><Facebook size={20} /></a>
-            <a href="#" className="text-gray-400 dark:text-gray-500 hover:text-primary transition-colors"><Twitter size={20} /></a>
-            <a href="#" className="text-gray-400 dark:text-gray-500 hover:text-primary transition-colors"><Linkedin size={20} /></a>
-          </div>
         </div>
 
         {/* Services */}
