@@ -37,8 +37,8 @@ export default function Hero() {
               Dalbo Demo Toos Ah
               <ArrowRight size={18} />
             </a>
-            <a href="#contact" className="flex items-center justify-center bg-white dark:bg-slate-900 text-secondary dark:text-white px-8 py-4 rounded-xl font-medium hover:bg-gray-100 dark:hover:bg-slate-800 border border-gray-200 dark:border-slate-800 transition-all">
-              Nala Hadal
+            <a href="#services" className="flex items-center justify-center bg-white dark:bg-slate-900 text-secondary dark:text-white px-8 py-4 rounded-xl font-medium hover:bg-gray-100 dark:hover:bg-slate-800 border border-gray-200 dark:border-slate-800 transition-all">
+              Eeg Adeegyadeena
             </a>
           </div>
         </motion.div>

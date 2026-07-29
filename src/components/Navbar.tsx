@@ -70,10 +70,10 @@ export default function Navbar() {
           <div className="flex items-center gap-4">
             <ThemeToggle />
             <a
-              href="#contact"
+              href="#pricing"
               className="bg-primary text-white px-6 py-2.5 rounded-xl font-medium hover:bg-primary/90 hover:scale-105 transition-all shadow-sm"
             >
-              Get Started
+              Dalbo Xirmo
             </a>
           </div>
         </nav>
@@ -112,11 +112,11 @@ export default function Navbar() {
               </a>
             ))}
             <a
-              href="#contact"
+              href="#pricing"
               onClick={() => setIsMobileMenuOpen(false)}
               className="bg-primary text-white text-center px-6 py-3 rounded-xl font-medium mt-2 shadow-sm"
             >
-              Get Started
+              Dalbo Xirmo
             </a>
           </motion.nav>
         )}
