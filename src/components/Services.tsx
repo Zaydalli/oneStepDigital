@@ -1,6 +1,6 @@
 "use client";
 
-import { QrCode, Video, TrendingUp, Settings, ArrowRight, CheckCircle2, Sparkles } from "lucide-react";
+import { QrCode, Video, Share2, Palette, ArrowRight, CheckCircle2, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function Services() {
@@ -15,17 +15,17 @@ export default function Services() {
             <span>Adeegyada Aan Bixinno</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-secondary dark:text-white tracking-tight leading-[1.18]">
-            Adeegyo Dijitaal Ah Oo Loo Habeeyay Ganacsigaaga
+            Adeegyadeenna
           </h2>
           <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 mt-4 leading-relaxed">
-            Dooro xalka ku habboon heerka uu ganacsigaagu maanta joogo.
+            Xalal dijitaal ah oo casri ah, loona habeeyey inay fududeeyaan shaqada ganacsigaaga, kordhiyaan muuqaalkaaga, kaana caawinayaan inaad gaarto macaamiil badan.
           </p>
         </div>
 
         {/* Editorial Services Grid */}
         <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
           
-          {/* Service 01 */}
+          {/* Service 01: Digital Starter */}
           <motion.div
             initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -40,35 +40,44 @@ export default function Services() {
                     <QrCode size={24} />
                   </div>
                   <span className="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
-                    Diyaarinta Nidaamka
+                    Basic Setup
                   </span>
                 </div>
                 <span className="text-2xl font-mono font-black text-slate-300 dark:text-slate-700">01</span>
               </div>
 
-              <h3 className="text-2xl font-bold text-secondary dark:text-white mb-3 tracking-tight">
-                Digital Starter (QR & Catalog)
+              <h3 className="text-2xl font-bold text-secondary dark:text-white mb-6 tracking-tight">
+                Digital Starter
               </h3>
-              <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
-                U beddel meheraddaada mid casri ah oo leh QR Menu dijitaal ah oo toos ugu xiran WhatsApp iyo cinwaan Google Maps ah oo la xaqiijiyay.
-              </p>
 
-              <div className="space-y-2.5 mb-8">
+              <div className="space-y-3 mb-8">
                 <div className="flex items-center gap-2.5 text-xs sm:text-sm text-secondary dark:text-slate-200 font-medium">
                   <CheckCircle2 size={16} className="text-primary shrink-0" />
-                  <span>Digital Menu & QR Code casri ah</span>
+                  <span>QR / Digital Catalog Setup</span>
                 </div>
                 <div className="flex items-center gap-2.5 text-xs sm:text-sm text-secondary dark:text-slate-200 font-medium">
                   <CheckCircle2 size={16} className="text-primary shrink-0" />
-                  <span>Google Maps & Xogta Meheradda</span>
+                  <span>WhatsApp Business Setup & Optimization</span>
                 </div>
                 <div className="flex items-center gap-2.5 text-xs sm:text-sm text-secondary dark:text-slate-200 font-medium">
                   <CheckCircle2 size={16} className="text-primary shrink-0" />
-                  <span>WhatsApp Direct Ordering Setup</span>
+                  <span>Google Maps Setup + Photos</span>
                 </div>
                 <div className="flex items-center gap-2.5 text-xs sm:text-sm text-secondary dark:text-slate-200 font-medium">
                   <CheckCircle2 size={16} className="text-primary shrink-0" />
-                  <span>Tababar iyo wareejin buuxda</span>
+                  <span>5 QR Stands / Display Cards</span>
+                </div>
+                <div className="flex items-center gap-2.5 text-xs sm:text-sm text-secondary dark:text-slate-200 font-medium">
+                  <CheckCircle2 size={16} className="text-primary shrink-0" />
+                  <span>100 Logo Stickers</span>
+                </div>
+                <div className="flex items-center gap-2.5 text-xs sm:text-sm text-secondary dark:text-slate-200 font-medium">
+                  <CheckCircle2 size={16} className="text-primary shrink-0" />
+                  <span>1 Welcome / Offer Post</span>
+                </div>
+                <div className="flex items-center gap-2.5 text-xs sm:text-sm text-secondary dark:text-slate-200 font-medium">
+                  <CheckCircle2 size={16} className="text-primary shrink-0" />
+                  <span>Final QR, Link & WhatsApp Test</span>
                 </div>
               </div>
             </div>
@@ -79,12 +88,12 @@ export default function Services() {
               rel="noopener noreferrer"
               className="w-full py-3.5 rounded-full font-bold text-sm sm:text-base flex items-center justify-center gap-2 transition-all bg-slate-100 hover:bg-primary hover:text-white dark:bg-slate-800 dark:hover:bg-primary text-secondary dark:text-white"
             >
-              <span>Dalbo Digital Starter</span>
+              <span>Dalbo Adeeggan</span>
               <ArrowRight size={16} />
             </a>
           </motion.div>
 
-          {/* Service 02 - Featured */}
+          {/* Service 02: Content Boost */}
           <motion.div
             initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -95,39 +104,36 @@ export default function Services() {
             <div>
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-2xl bg-primary/10 dark:bg-primary/20 text-primary flex items-center justify-center">
+                  <div className="w-12 h-12 rounded-2xl bg-accent/20 text-accent flex items-center justify-center">
                     <Video size={24} />
                   </div>
                   <span className="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
-                    Soo Jiidashada Macaamiisha
+                    Engaging Visuals
                   </span>
                 </div>
                 <span className="text-2xl font-mono font-black text-slate-300 dark:text-slate-700">02</span>
               </div>
 
-              <h3 className="text-2xl font-bold text-secondary dark:text-white mb-3 tracking-tight">
-                Content Boost (Reels)
+              <h3 className="text-2xl font-bold text-secondary dark:text-white mb-6 tracking-tight">
+                Content Boost
               </h3>
-              <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
-                Muuqaallo tayo sare leh oo loogu talagalay Instagram Reels si ganacsigaaga looga dhex arko suuqa oo dhan loona keeno iib toos ah.
-              </p>
 
-              <div className="space-y-2.5 mb-8">
+              <div className="space-y-3 mb-8">
                 <div className="flex items-center gap-2.5 text-xs sm:text-sm text-secondary dark:text-slate-200 font-medium">
                   <CheckCircle2 size={16} className="text-primary shrink-0" />
-                  <span>8 Muuqaal (Reels) bishii</span>
+                  <span>2 Short Reels per month</span>
                 </div>
                 <div className="flex items-center gap-2.5 text-xs sm:text-sm text-secondary dark:text-slate-200 font-medium">
                   <CheckCircle2 size={16} className="text-primary shrink-0" />
-                  <span>Qorista Fikradda & Script-ka</span>
+                  <span>2 Hours Flexible Filming</span>
                 </div>
                 <div className="flex items-center gap-2.5 text-xs sm:text-sm text-secondary dark:text-slate-200 font-medium">
                   <CheckCircle2 size={16} className="text-primary shrink-0" />
-                  <span>Duubis & Editing xirfad sare leh</span>
+                  <span>Editing & Text Captions</span>
                 </div>
                 <div className="flex items-center gap-2.5 text-xs sm:text-sm text-secondary dark:text-slate-200 font-medium">
                   <CheckCircle2 size={16} className="text-primary shrink-0" />
-                  <span>Dhisidda sumcadda baraha bulshada</span>
+                  <span>Ready-to-Post Files</span>
                 </div>
               </div>
             </div>
@@ -138,12 +144,12 @@ export default function Services() {
               rel="noopener noreferrer"
               className="w-full py-3.5 rounded-full font-bold text-sm sm:text-base flex items-center justify-center gap-2 transition-all bg-primary hover:bg-blue-700 text-white shadow-md shadow-primary/25"
             >
-              <span>Dalbo Content Boost</span>
+              <span>Dalbo Adeeggan</span>
               <ArrowRight size={16} />
             </a>
           </motion.div>
 
-          {/* Service 03 */}
+          {/* Service 03: Growth Management */}
           <motion.div
             initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -155,38 +161,35 @@ export default function Services() {
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 rounded-2xl bg-primary/10 dark:bg-primary/20 text-primary flex items-center justify-center">
-                    <TrendingUp size={24} />
+                    <Share2 size={24} />
                   </div>
                   <span className="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
-                    Kobcin & Maamul Joogto Ah
+                    Page Management
                   </span>
                 </div>
                 <span className="text-2xl font-mono font-black text-slate-300 dark:text-slate-700">03</span>
               </div>
 
-              <h3 className="text-2xl font-bold text-secondary dark:text-white mb-3 tracking-tight">
-                Growth Management (Bogagga & Xayeysiiska)
+              <h3 className="text-2xl font-bold text-secondary dark:text-white mb-6 tracking-tight">
+                Growth Management
               </h3>
-              <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
-                Maareynta buuxda ee dhammaan barahaaga bulshada, xayeysiisyada Meta Ads ee dakhliga kordhiya, iyo la-socodka fariimaha macaamiisha.
-              </p>
 
-              <div className="space-y-2.5 mb-8">
+              <div className="space-y-3 mb-8">
                 <div className="flex items-center gap-2.5 text-xs sm:text-sm text-secondary dark:text-slate-200 font-medium">
                   <CheckCircle2 size={16} className="text-primary shrink-0" />
-                  <span>Maamulka Facebook & Instagram</span>
+                  <span>6 Posts / Designs per month</span>
                 </div>
                 <div className="flex items-center gap-2.5 text-xs sm:text-sm text-secondary dark:text-slate-200 font-medium">
                   <CheckCircle2 size={16} className="text-primary shrink-0" />
-                  <span>Posting & Engagement joogto ah</span>
+                  <span>2 Short Reels per month</span>
                 </div>
                 <div className="flex items-center gap-2.5 text-xs sm:text-sm text-secondary dark:text-slate-200 font-medium">
                   <CheckCircle2 size={16} className="text-primary shrink-0" />
-                  <span>Xayeysiisyada Meta Ads Management</span>
+                  <span>Posting (Facebook / Instagram / TikTok)</span>
                 </div>
                 <div className="flex items-center gap-2.5 text-xs sm:text-sm text-secondary dark:text-slate-200 font-medium">
                   <CheckCircle2 size={16} className="text-primary shrink-0" />
-                  <span>Warbixin bille ah oo faahfaahsan</span>
+                  <span>Content Plan & Monthly Report</span>
                 </div>
               </div>
             </div>
@@ -197,12 +200,12 @@ export default function Services() {
               rel="noopener noreferrer"
               className="w-full py-3.5 rounded-full font-bold text-sm sm:text-base flex items-center justify-center gap-2 transition-all bg-slate-100 hover:bg-primary hover:text-white dark:bg-slate-800 dark:hover:bg-primary text-secondary dark:text-white"
             >
-              <span>Dalbo Growth Management</span>
+              <span>Dalbo Adeeggan</span>
               <ArrowRight size={16} />
             </a>
           </motion.div>
 
-          {/* Service 04 */}
+          {/* Service 04: Custom Services */}
           <motion.div
             initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -213,39 +216,36 @@ export default function Services() {
             <div>
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-2xl bg-primary/10 dark:bg-primary/20 text-primary flex items-center justify-center">
-                    <Settings size={24} />
+                  <div className="w-12 h-12 rounded-2xl bg-secondary/10 dark:bg-slate-800 text-secondary dark:text-white flex items-center justify-center">
+                    <Palette size={24} />
                   </div>
                   <span className="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
-                    Xalka Gaarka Ah
+                    Tailored Solutions
                   </span>
                 </div>
                 <span className="text-2xl font-mono font-black text-slate-300 dark:text-slate-700">04</span>
               </div>
 
-              <h3 className="text-2xl font-bold text-secondary dark:text-white mb-3 tracking-tight">
-                Custom Services (Xalal Khaas Ah)
+              <h3 className="text-2xl font-bold text-secondary dark:text-white mb-6 tracking-tight">
+                Custom Services
               </h3>
-              <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
-                Mashruucyo gaar ah oo loogu talagalay ganacsiyada u baahan Website xirfadaysan, Logo & Brand Identity, ama Event Coverage.
-              </p>
 
-              <div className="space-y-2.5 mb-8">
+              <div className="space-y-3 mb-8">
                 <div className="flex items-center gap-2.5 text-xs sm:text-sm text-secondary dark:text-slate-200 font-medium">
                   <CheckCircle2 size={16} className="text-primary shrink-0" />
-                  <span>Website Development & Landing Pages</span>
+                  <span>Website Development</span>
                 </div>
                 <div className="flex items-center gap-2.5 text-xs sm:text-sm text-secondary dark:text-slate-200 font-medium">
                   <CheckCircle2 size={16} className="text-primary shrink-0" />
-                  <span>Logo & Brand Identity Design</span>
+                  <span>Logo Design</span>
                 </div>
                 <div className="flex items-center gap-2.5 text-xs sm:text-sm text-secondary dark:text-slate-200 font-medium">
                   <CheckCircle2 size={16} className="text-primary shrink-0" />
-                  <span>Meta Ads & Campaign Scaling</span>
+                  <span>Meta Ads Management</span>
                 </div>
                 <div className="flex items-center gap-2.5 text-xs sm:text-sm text-secondary dark:text-slate-200 font-medium">
                   <CheckCircle2 size={16} className="text-primary shrink-0" />
-                  <span>Duubista Munaasabadaha (Events)</span>
+                  <span>Event Coverage</span>
                 </div>
               </div>
             </div>
@@ -256,7 +256,7 @@ export default function Services() {
               rel="noopener noreferrer"
               className="w-full py-3.5 rounded-full font-bold text-sm sm:text-base flex items-center justify-center gap-2 transition-all bg-slate-100 hover:bg-primary hover:text-white dark:bg-slate-800 dark:hover:bg-primary text-secondary dark:text-white"
             >
-              <span>La Tasho Kooxda</span>
+              <span>Dalbo Adeeggan</span>
               <ArrowRight size={16} />
             </a>
           </motion.div>

@@ -6,49 +6,58 @@ import { motion } from "framer-motion";
 export default function Pricing() {
   const plans = [
     {
-      name: "Starter",
-      badge: "One-Time Setup",
+      name: "DIGITAL STARTER",
+      subtitle: "Basic Setup",
+      badge: "Ugu Habboon Billowga",
       price: "$120",
-      period: "mar kaliya",
-      description: "Ku habboon ganacsiyada cusub ee raba in ay nidaamsadaan dalabaadka iyo cinwaanka Google Maps-ka.",
+      period: "One Time",
       features: [
-        "Digital Menu & QR Code casri ah",
-        "WhatsApp Direct Ordering Setup",
-        "Google Maps Profile Setup & Optimization",
-        "1 Bil oo Taageero Farsamo ah",
+        "QR / Digital Catalog Setup",
+        "WhatsApp Business Setup & Optimization",
+        "Google Maps Setup + Photos",
+        "5 QR Stands / Display Cards",
+        "100 Logo Stickers",
+        "1 Welcome / Offer Post",
+        "Final QR, Link & WhatsApp Test",
       ],
-      recommended: false,
-      buttonText: "Dalbo Starter",
-    },
-    {
-      name: "Content Boost",
-      badge: "Ugu Caansan",
-      price: "$150",
-      period: "bishii",
-      description: "Xirmo loogu talagalay meheradaha raba muuqaallo (Reels) joogto ah oo soo jiita macaamiil cusub.",
-      features: [
-        "8 Muuqaal (Reels) bishii",
-        "Qorista Script-ka & Duubista Muuqaallada",
-        "Editing & Graphic Design heersare ah",
-        "La-socodka Natiijooyinka iyo Daawashada",
-      ],
+      supportNote: "Wareejinta shaqada kadib, wixii wax ka beddel ah ama shaqo dheeri ah si gaar ah ayaa loo xisaabinayaa.",
+      noteLabel: "Shuruudda Taageerada:",
       recommended: true,
-      buttonText: "Dalbo Content Boost",
+      buttonText: "Dalbo Xirmadan",
     },
     {
-      name: "Growth Management",
-      badge: "Maamul Dhameystiran",
-      price: "$200",
-      period: "bishii",
-      description: "Xalka ugu buuxa ee ganacsiyada raba in dhammaan baraha bulshada iyo xayeysiisyada loo maareeyo.",
+      name: "CONTENT BOOST",
+      subtitle: "Engaging Visuals",
+      badge: "Visuals",
+      price: "$150",
+      period: "Monthly",
       features: [
-        "Maamulka Bogagga (Facebook, Instagram & TikTok)",
-        "Posting Joogto Ah & Jawaabaha Macaamiisha",
-        "Meta Ads Management & Targeted Campaigns",
-        "Warbixin Bille Ah & La-talin joogto ah",
+        "2 Short Reels per month",
+        "2 Hours Flexible Filming",
+        "Editing & Text Captions",
+        "Ready-to-Post Files",
       ],
+      supportNote: "Xirmadani waa abuuris muuqaal keliya. Macmiilka ayaa la wareegaya oo isagu post-gareynaya.",
+      noteLabel: "FG:",
       recommended: false,
-      buttonText: "Dalbo Growth Management",
+      buttonText: "Dalbo Xirmadan",
+    },
+    {
+      name: "GROWTH MANAGEMENT",
+      subtitle: "Continuous Page Management",
+      badge: "Maamul",
+      price: "$200",
+      period: "Monthly",
+      features: [
+        "6 Posts / Designs per month",
+        "2 Short Reels per month",
+        "Posting (Facebook / Instagram / TikTok)",
+        "Content Plan & Monthly Report",
+      ],
+      supportNote: "Xirmadani kuma jirto bixinta lacagta Meta Ads-ka iyo u jawaabidda farriimaha (DMs/Comments).",
+      noteLabel: "FG:",
+      recommended: false,
+      buttonText: "Dalbo Xirmadan",
     },
   ];
 
@@ -60,13 +69,13 @@ export default function Pricing() {
         <div className="text-center max-w-2xl mx-auto mb-14 sm:mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary dark:bg-primary/20 dark:text-blue-300 font-semibold text-xs sm:text-sm mb-4 border border-primary/20">
             <Sparkles size={14} />
-            <span>Xirmooyinka & Qiimaha</span>
+            <span>Qiimo Fudud oo Cad</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-secondary dark:text-white tracking-tight leading-[1.18]">
-            Xirmooyin Hufan Oo Aan Qarsoodi Lahayn
+            Xirmooyinka & Qiimaha
           </h2>
           <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 mt-4 leading-relaxed">
-            Dooro qorshaha ku habboon baahida ganacsigaaga.
+            Dooro xirmada kugu habboon si aad u dardar geliso kobocaaga dijitaalka ah. Ma jiraan lacago qarsoon.
           </p>
         </div>
 
@@ -92,21 +101,13 @@ export default function Pricing() {
               )}
 
               <div>
-                <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-2xl font-bold text-secondary dark:text-white">{plan.name}</h3>
-                  {!plan.recommended && (
-                    <span className="text-xs font-semibold px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
-                      {plan.badge}
-                    </span>
-                  )}
+                <div className="mb-6">
+                  <h3 className="text-xl sm:text-2xl font-bold text-secondary dark:text-white mb-1">{plan.name}</h3>
+                  <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-medium">{plan.subtitle}</p>
                 </div>
 
-                <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
-                  {plan.description}
-                </p>
-
                 {/* Price Display */}
-                <div className="flex items-baseline gap-1.5 mb-8 pb-6 border-b border-slate-100 dark:border-slate-800">
+                <div className="flex items-baseline gap-1.5 mb-6 pb-6 border-b border-slate-100 dark:border-slate-800">
                   <span className="text-4xl sm:text-5xl font-black text-secondary dark:text-white tracking-tight">
                     {plan.price}
                   </span>
@@ -116,7 +117,7 @@ export default function Pricing() {
                 </div>
 
                 {/* Features List */}
-                <div className="space-y-3 mb-8">
+                <div className="space-y-3 mb-6">
                   {plan.features.map((feature) => (
                     <div key={feature} className="flex items-start gap-3">
                       <div className="w-5 h-5 rounded-full bg-primary/10 dark:bg-primary/20 text-primary flex items-center justify-center shrink-0 mt-0.5">
@@ -128,6 +129,15 @@ export default function Pricing() {
                     </div>
                   ))}
                 </div>
+
+                {/* Support Note */}
+                {plan.supportNote && (
+                  <div className="bg-slate-50 dark:bg-slate-800/60 p-3.5 rounded-xl mb-8 border border-slate-200/60 dark:border-slate-700/60">
+                    <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                      <strong className="text-secondary dark:text-white font-semibold">{plan.noteLabel}</strong> {plan.supportNote}
+                    </p>
+                  </div>
+                )}
               </div>
 
               {/* Card CTA */}
