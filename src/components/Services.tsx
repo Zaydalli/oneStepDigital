@@ -47,7 +47,7 @@ export default function Services() {
               </div>
 
               <h3 className="text-2xl font-bold text-secondary dark:text-white mb-3 tracking-tight">
-                Digital Starter — QR & Catalog
+                Digital Starter (QR & Catalog)
               </h3>
               <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
                 U beddel meheraddaada mid casri ah oo leh QR Menu dijitaal ah oo toos ugu xiran WhatsApp iyo cinwaan Google Maps ah oo la xaqiijiyay.
@@ -106,7 +106,7 @@ export default function Services() {
               </div>
 
               <h3 className="text-2xl font-bold text-secondary dark:text-white mb-3 tracking-tight">
-                Content Boost — Reels & TikTok
+                Content Boost (Reels & TikTok)
               </h3>
               <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
                 Muuqaallo tayo sare leh oo loogu talagalay TikTok & Instagram Reels si ganacsigaaga looga dhex arko suuqa oo dhan loona keeno iib toos ah.
@@ -165,7 +165,7 @@ export default function Services() {
               </div>
 
               <h3 className="text-2xl font-bold text-secondary dark:text-white mb-3 tracking-tight">
-                Growth Management — Bogagga & Xayeysiiska
+                Growth Management (Bogagga & Xayeysiiska)
               </h3>
               <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
                 Maareynta buuxda ee dhammaan barahaaga bulshada, xayeysiisyada Meta Ads ee dakhliga kordhiya, iyo la-socodka fariimaha macaamiisha.
@@ -224,7 +224,7 @@ export default function Services() {
               </div>
 
               <h3 className="text-2xl font-bold text-secondary dark:text-white mb-3 tracking-tight">
-                Custom Services — Xalal Khaas Ah
+                Custom Services (Xalal Khaas Ah)
               </h3>
               <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
                 Mashruucyo gaar ah oo loogu talagalay ganacsiyada u baahan Website xirfadaysan, Logo & Brand Identity, ama Event Coverage.

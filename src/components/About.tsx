@@ -19,7 +19,7 @@ export default function About() {
             <span>Dhibaatada & Xalka</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-secondary dark:text-white tracking-tight leading-[1.18]">
-            Ganacsiyada Casriga Ah Uma Baahna Mashquul — Waxay U Baahan Yihiin <span className="text-primary">Nidaam</span>
+            Ganacsiyada Casriga Ah Uma Baahna Mashquul, Waxay U Baahan Yihiin <span className="text-primary">Nidaam</span>
           </h2>
         </div>
 
@@ -93,7 +93,7 @@ export default function About() {
             Hadafkeenna waa inaan nidaam u beddelno mashquulkaaga, si adiguna aad diiradda u saarto kobcinta ganacsigaaga.
           </p>
           <div className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-slate-400">
-            OneStep Digital — Halbeegga Casriyeynta
+            OneStep Digital | Halbeegga Casriyeynta
           </div>
         </motion.div>
 

@@ -25,7 +25,7 @@ export default function Hero() {
             <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
           </span>
           <span className="text-xs sm:text-sm font-semibold text-secondary dark:text-slate-200">
-            Digital Marketing Studio — <span className="text-primary font-bold">Muqdisho</span>
+            Digital Marketing Studio <span className="text-primary font-bold">Muqdisho</span>
           </span>
         </motion.div>
 
