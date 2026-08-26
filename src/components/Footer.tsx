@@ -7,7 +7,7 @@ import { Facebook, Instagram } from "lucide-react";
 export default function Footer() {
   const services = [
     { name: "Digital Menu & QR Code", href: "#services" },
-    { name: "Content Creation (Reels/TikTok)", href: "#services" },
+    { name: "Content Creation (Reels)", href: "#services" },
     { name: "Social Media Management", href: "#services" },
     { name: "Google Maps & Web Development", href: "#services" },
   ];

@@ -106,16 +106,16 @@ export default function Services() {
               </div>
 
               <h3 className="text-2xl font-bold text-secondary dark:text-white mb-3 tracking-tight">
-                Content Boost (Reels & TikTok)
+                Content Boost (Reels)
               </h3>
               <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
-                Muuqaallo tayo sare leh oo loogu talagalay TikTok & Instagram Reels si ganacsigaaga looga dhex arko suuqa oo dhan loona keeno iib toos ah.
+                Muuqaallo tayo sare leh oo loogu talagalay Instagram Reels si ganacsigaaga looga dhex arko suuqa oo dhan loona keeno iib toos ah.
               </p>
 
               <div className="space-y-2.5 mb-8">
                 <div className="flex items-center gap-2.5 text-xs sm:text-sm text-secondary dark:text-slate-200 font-medium">
                   <CheckCircle2 size={16} className="text-primary shrink-0" />
-                  <span>8 Muuqaal (Reels/TikTok) bishii</span>
+                  <span>8 Muuqaal (Reels) bishii</span>
                 </div>
                 <div className="flex items-center gap-2.5 text-xs sm:text-sm text-secondary dark:text-slate-200 font-medium">
                   <CheckCircle2 size={16} className="text-primary shrink-0" />

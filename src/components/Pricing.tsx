@@ -25,9 +25,9 @@ export default function Pricing() {
       badge: "Ugu Caansan",
       price: "$150",
       period: "bishii",
-      description: "Xirmo loogu talagalay meheradaha raba muuqaallo (Reels/TikTok) joogto ah oo soo jiita macaamiil cusub.",
+      description: "Xirmo loogu talagalay meheradaha raba muuqaallo (Reels) joogto ah oo soo jiita macaamiil cusub.",
       features: [
-        "8 Muuqaal (Reels/TikTok) bishii",
+        "8 Muuqaal (Reels) bishii",
         "Qorista Script-ka & Duubista Muuqaallada",
         "Editing & Graphic Design heersare ah",
         "La-socodka Natiijooyinka iyo Daawashada",

@@ -78,7 +78,7 @@ export default function Process() {
                 Hirgelin & Naqshadeyn
               </h3>
               <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
-                Waxaan diyaarinaa nidaamkaaga (QR Menu, Maps), duubnaa muuqaallada (Reels/TikTok), una habeynaa xayeysiisyada si xirfadeysan.
+                Waxaan diyaarinaa nidaamkaaga (QR Menu, Maps), duubnaa muuqaallada (Reels), una habeynaa xayeysiisyada si xirfadeysan.
               </p>
             </div>
 
