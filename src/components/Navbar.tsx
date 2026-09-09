@@ -44,8 +44,8 @@ export default function Navbar() {
         <div 
           className={`transition-all duration-300 ${
             isScrolled
-              ? "bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border border-slate-200/90 dark:border-slate-800/90 shadow-lg shadow-slate-900/5 rounded-2xl sm:rounded-full py-3 px-5 sm:px-7"
-              : "bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border border-slate-200/60 dark:border-slate-800/60 rounded-2xl sm:rounded-full py-3 sm:py-3.5 px-5 sm:px-7 shadow-sm"
+              ? "bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border border-slate-200/90 dark:border-slate-800/90 shadow-lg shadow-slate-900/5 rounded-2xl sm:rounded-full py-2 sm:py-2.5 px-4 sm:px-6"
+              : "bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border border-slate-200/60 dark:border-slate-800/60 rounded-2xl sm:rounded-full py-2.5 sm:py-3 px-4 sm:px-6 shadow-sm"
           } flex items-center justify-between`}
         >
           {/* Logo */}
@@ -55,7 +55,7 @@ export default function Navbar() {
               alt="OneStep Digital Logo" 
               width={340} 
               height={115} 
-              className="h-14 sm:h-16 w-auto dark:hidden transition-transform duration-300 group-hover:scale-105"
+              className="h-[44px] sm:h-[50px] w-auto dark:hidden transition-transform duration-300 group-hover:scale-105"
               priority
             />
             <Image 
@@ -63,7 +63,7 @@ export default function Navbar() {
               alt="OneStep Digital Logo Dark" 
               width={340} 
               height={115} 
-              className="h-14 sm:h-16 w-auto hidden dark:block transition-transform duration-300 group-hover:scale-105"
+              className="h-[44px] sm:h-[50px] w-auto hidden dark:block transition-transform duration-300 group-hover:scale-105"
               priority
             />
           </a>
