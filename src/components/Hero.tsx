@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section id="home" className="relative pt-32 sm:pt-40 pb-20 sm:pb-28 overflow-hidden bg-white dark:bg-slate-950">
+    <section id="home" className="relative pt-24 sm:pt-28 pb-16 sm:pb-24 overflow-hidden bg-white dark:bg-slate-950">
       {/* Dynamic Background Glows */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-5xl h-[420px] bg-gradient-to-b from-primary/15 via-accent/10 to-transparent rounded-full blur-[140px] pointer-events-none -z-10" />
       <div className="absolute top-1/3 -left-48 w-96 h-96 bg-primary/10 rounded-full blur-[120px] pointer-events-none -z-10" />
