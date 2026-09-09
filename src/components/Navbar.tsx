@@ -55,7 +55,7 @@ export default function Navbar() {
               alt="OneStep Digital Logo" 
               width={340} 
               height={115} 
-              className="h-11 sm:h-13 w-auto dark:hidden transition-transform duration-300 group-hover:scale-105"
+              className="h-14 sm:h-16 w-auto dark:hidden transition-transform duration-300 group-hover:scale-105"
               priority
             />
             <Image 
@@ -63,7 +63,7 @@ export default function Navbar() {
               alt="OneStep Digital Logo Dark" 
               width={340} 
               height={115} 
-              className="h-11 sm:h-13 w-auto hidden dark:block transition-transform duration-300 group-hover:scale-105"
+              className="h-14 sm:h-16 w-auto hidden dark:block transition-transform duration-300 group-hover:scale-105"
               priority
             />
           </a>

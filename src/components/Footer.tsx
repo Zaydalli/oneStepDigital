@@ -41,14 +41,14 @@ export default function Footer() {
                 alt="OneStep Digital Logo" 
                 width={360} 
                 height={120} 
-                className="h-14 sm:h-16 w-auto dark:hidden"
+                className="h-16 sm:h-20 w-auto dark:hidden"
               />
               <Image 
                 src="/dark mode logo.webp" 
                 alt="OneStep Digital Logo Dark" 
                 width={360} 
                 height={120} 
-                className="h-14 sm:h-16 w-auto hidden dark:block"
+                className="h-16 sm:h-20 w-auto hidden dark:block"
               />
             </Link>
 
