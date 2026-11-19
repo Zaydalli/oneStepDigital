@@ -10,7 +10,7 @@ import Pricing from "@/components/Pricing";
 import CustomServices from "@/components/CustomServices";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
+import OneStepChat from "@/components/OneStepChat";
 
 export default function Home() {
   return (
@@ -27,7 +27,7 @@ export default function Home() {
         <Contact />
       </main>
       <Footer />
-      <WhatsAppButton />
+      <OneStepChat />
     </>
   );
 }
