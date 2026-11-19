@@ -1,6 +1,7 @@
 {
   "name": "onestep-chat",
   "main": "worker.js",
+  "workers_dev": true,
   "compatibility_date": "2026-11-01",
   "ai": {
     "binding": "AI"
