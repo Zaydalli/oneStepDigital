@@ -14,7 +14,7 @@
     }
   ],
   "vars": {
-    "AI_ENABLED": "false",
+    "AI_ENABLED": "true",
     "DAILY_LIMIT": "50"
   },
   "triggers": {
