@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Mail, MessageCircle, MapPin, Send, CheckCircle2, AlertCircle, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { trackMeta } from "@/lib/meta";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -39,6 +40,7 @@ export default function Contact() {
 
       if (response.ok) {
         setFormStatus("success");
+        trackMeta("Lead", { content_name: "Contact form" });
         setFormData({ name: "", businessName: "", whatsapp: "", message: "", _honey: "" });
       } else {
         setFormStatus("error");

@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { Analytics } from "@vercel/analytics/react";
 import Script from "next/script";
+import MetaEvents from "@/components/MetaEvents";
 
 const META_PIXEL_ID = "29151464267851295";
 
@@ -95,6 +96,7 @@ fbq('track', 'PageView');
           {children}
         </ThemeProvider>
         <Analytics />
+        <MetaEvents />
       </body>
     </html>
   );
