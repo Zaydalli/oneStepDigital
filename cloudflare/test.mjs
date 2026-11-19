@@ -1,0 +1,15 @@
+import {readFileSync} from 'node:fs';
+import assert from 'node:assert/strict';
+const code=readFileSync(new URL('./worker.js',import.meta.url),'utf8');
+const {default:w}=await import('data:text/javascript;base64,'+Buffer.from(code).toString('base64'));
+let calls=0,writes=0,quota=true;
+const env={CHAT_SECRET:'test',AI_ENABLED:'true',AI:{run:async()=>{calls++;return {response:'Jawaab AI'};}},DB:{prepare:()=>({bind(){return this;},all:async()=>({results:[]}),first:async()=>quota?{count:1}:null}),batch:async()=>{writes++;}}};
+const req=(b,auth='test')=>new Request('https://worker.test/chat',{method:'POST',headers:{Authorization:`Bearer ${auth}`},body:JSON.stringify({message:'hello',session:'12345678-1234-1234-1234-123456789012',...b})});
+assert.equal((await w.fetch(req({},'wrong'),env)).status,401);
+assert.equal((await w.fetch(req({message:7}),env)).status,400);
+let r=await (await w.fetch(req({faq:'FAQ',consent:false}),env)).json();assert.equal(r.reply,'FAQ');assert.equal(calls,0);assert.equal(writes,0);
+r=await(await w.fetch(req({consent:true}),env)).json();assert.equal(r.mode,'ai');assert.equal(r.storage,'saved');assert.equal(writes,1);
+quota=false;r=await(await w.fetch(req({consent:false}),env)).json();assert.equal(r.mode,'faq');assert.equal(calls,1);
+env.DB.batch=async()=>{throw Error('save failed');};r=await(await w.fetch(req({faq:'FAQ',consent:true}),env)).json();assert.equal(r.storage,'failed');
+env.AI_ENABLED='false';quota=true;r=await(await w.fetch(req({}),env)).json();assert.equal(r.mode,'faq');assert.equal(calls,1);
+console.log('7 checks passed: auth, validation, consent, AI, quota, failed save, disabled AI');
