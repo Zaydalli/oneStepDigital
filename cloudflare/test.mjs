@@ -11,7 +11,8 @@ let r=await (await w.fetch(req({faq:'FAQ',consent:false}),env)).json();assert.eq
 r=await(await w.fetch(req({consent:true,answers}),env)).json();assert.equal(r.mode,'ai');assert.equal(r.reply,'Growth Management (Soomaali)');assert.equal(r.storage,'saved');assert.equal(writes,1);
 label='en prices';r=await(await w.fetch(req({answers}),env)).json();assert.equal(r.reply,'English answer');assert.equal(calls,3);
 label='so handoff';r=await(await w.fetch(req({answers}),env)).json();assert.equal(r.mode,'faq');
+label='so other';r=await(await w.fetch(req({answers}),env)).json();assert.equal(r.reply,'English answer');assert.equal(r.mode,'ai');
 calls=1;quota=false;r=await(await w.fetch(req({consent:false}),env)).json();assert.equal(r.mode,'faq');assert.equal(calls,1);
 env.DB.batch=async()=>{throw Error('save failed');};r=await(await w.fetch(req({faq:'FAQ',consent:true}),env)).json();assert.equal(r.storage,'failed');
 env.AI_ENABLED='false';quota=true;r=await(await w.fetch(req({}),env)).json();assert.equal(r.mode,'faq');assert.equal(calls,1);
-console.log('10 checks passed: auth, validation, consent, Somali AI picks written answer, English AI answer, unknown category falls back, quota, failed save, disabled AI');
+console.log('11 checks passed: auth, validation, consent, Somali business → written answer, English free answer, handoff → team, Somali general → free AI answer, quota, failed save, disabled AI');

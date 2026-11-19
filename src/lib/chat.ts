@@ -29,12 +29,12 @@ export type AnswerKey = keyof typeof answers;
 export function faq(message: string): string | null {
   const text = message.toLowerCase();
   if (/refund|lacag[- ]?celin|lacag[- ]?bixin|cabasho|payment|invoice|password|access|balance|haraag/.test(text)) return answers.handoff;
-  if (/qiim|price|cost|package|xirm|immisa|lacag/.test(text)) return answers.prices;
+  if (/qiim|price|cost|package|xirm|immisa/.test(text)) return answers.prices;
   if (/\bqr\b|menu|catalog|maps|google|starter/.test(text)) return answers.starter;
-  if (/reel|video|muuqaal|duub|content boost/.test(text)) return answers.content;
-  if (/social|facebook|instagram|tiktok|page|bog|maamul|management|post/.test(text)) return answers.growth;
-  if (/website|web|logo|brand|ads|xayeysiis|event|munaasab/.test(text)) return answers.custom;
-  if (/adeeg|service|marketing|content|ma bixisaan|maxaad/.test(text)) return answers.services;
-  if (/xiriir|contact|whatsapp|email|qof|address|xarun|meesha|muqdisho/.test(text)) return answers.contact;
+  if (/\breels?\b|content boost|duubis/.test(text)) return answers.content;
+  if (/social media|facebook|instagram|tiktok|\bpage\b|maamul|management/.test(text)) return answers.growth;
+  if (/website|logo|branding|meta ads|xayeysiis/.test(text)) return answers.custom;
+  if (/adeeg|service|ma bixisaan/.test(text)) return answers.services;
+  if (/xiriir|contact|whatsapp|email|la hadal qof|xarun/.test(text)) return answers.contact;
   return null;
 }
