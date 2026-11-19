@@ -8,6 +8,8 @@ export default function OneStepChat() {
   const [messages, setMessages] = useState([{ role: "assistant", text: welcome }]);
   const [input, setInput] = useState("");
   const [busy, setBusy] = useState(false);
+  const [consent, setConsent] = useState(false);
+  const [storage, setStorage] = useState("");
   const toggle = useRef<HTMLButtonElement>(null);
   const field = useRef<HTMLInputElement>(null);
   const log = useRef<HTMLDivElement>(null);
@@ -18,8 +20,9 @@ export default function OneStepChat() {
     event?.preventDefault(); const message = (preset ?? input).trim(); if (!message || busy) return;
     setInput(""); setMessages(previous => [...previous.slice(-18), { role: "user", text: message }]); setBusy(true);
     try {
-      const response = await fetch("/api/chat", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ message }), signal: AbortSignal.timeout(25000) });
+      const response = await fetch("/api/chat", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ message, consent }), signal: AbortSignal.timeout(25000) });
       const data = await response.json();
+      setStorage(data.storage === "saved" ? "Farriinta waa la kaydiyey (30 maalmood)." : consent ? "Kaydintu ma guulaysan; kooxda WhatsApp kala xiriir." : "");
       setMessages(previous => [...previous, { role: "assistant", text: typeof data.reply === "string" ? data.reply : "Fadlan WhatsApp noogala xiriir." }]);
     } catch { setMessages(previous => [...previous, { role: "assistant", text: "Xiriirka ayaa go'ay. Mar kale isku day ama WhatsApp noogala xiriir." }]); }
     finally { setBusy(false); field.current?.focus(); }
@@ -32,6 +35,8 @@ export default function OneStepChat() {
         {busy && <p role="status">Jawaab ayaa la diyaarinayaa…</p>}
       </div>
       <div className="flex flex-wrap gap-2 px-4 pb-3">{["Adeegyada", "Qiimaha", "La hadal qof"].map(text => <button key={text} type="button" disabled={busy} onClick={() => send(undefined, text)} className="rounded-full border border-slate-300 px-3 py-1 text-xs disabled:opacity-40 dark:border-slate-600">{text}</button>)}</div>
+      <label className="px-3 py-2 text-xs"><input type="checkbox" checked={consent} onChange={e => setConsent(e.target.checked)} /> Waxaan oggolahay in farriimaha xiga 30 maalmood loo kaydiyo dabagalka kooxda. AI wuxuu adeegsanayaa Cloudflare; ha dirin xog gaar ah.</label>
+      {storage && <p role="status" className="px-3 text-xs">{storage}</p>}
       <form onSubmit={send} className="flex gap-2 border-t border-slate-200 p-3 dark:border-slate-700"><input ref={field} aria-label="Farriintaada" value={input} onChange={event => setInput(event.target.value)} maxLength={1000} placeholder="Qor su'aashaada…" className="min-w-0 flex-1 rounded-lg border border-slate-300 bg-transparent px-3 py-2 text-sm dark:border-slate-600" /><button disabled={busy || !input.trim()} aria-label="Dir su'aasha" className="rounded-lg bg-blue-600 p-3 text-white disabled:opacity-40"><Send size={18} /></button></form>
       <a href={handoffUrl} target="_blank" rel="noopener noreferrer" className="bg-green-700 px-4 py-3 text-center text-sm font-medium text-white">Kooxda kala hadal WhatsApp ↗</a>
       <p className="px-3 py-2 text-xs text-slate-500">Jawaabaha xaqiiji marka ay khuseeyaan qiime ama heshiis. <a className="underline" href="/privacy-policy">Asturnaanta</a></p>
