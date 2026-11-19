@@ -9,7 +9,7 @@
     {
       "binding": "DB",
       "database_name": "onestep-chat",
-      "database_id": "REPLACE_WITH_DATABASE_ID"
+      "database_id": "cb57e12f-b63c-476d-9421-2f43b54293b6"
     }
   ],
   "vars": {
