@@ -55,7 +55,7 @@ export default function PrivacyPolicy() {
             <p className="mb-6">
               We do not sell or rent your personal information. Contact form submissions are processed through a
               third-party form delivery service (FormSubmit) so that your message reaches our team by email.
-              We may also use trusted service providers (such as our hosting and analytics providers) who
+              We use the Meta Pixel, which sends Meta (Facebook) information about your visit, such as the pages you view and your browser, to measure and target our ads. We may also use trusted service providers (such as our hosting and analytics providers) who
               process data on our behalf under appropriate safeguards. The website chat assistant uses Cloudflare
               (Workers AI and D1) to generate replies and, only when you choose, to store chats.
             </p>
