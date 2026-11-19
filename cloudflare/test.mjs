@@ -12,4 +12,14 @@ r=await(await w.fetch(req({consent:true}),env)).json();assert.equal(r.mode,'ai')
 quota=false;r=await(await w.fetch(req({consent:false}),env)).json();assert.equal(r.mode,'faq');assert.equal(calls,1);
 env.DB.batch=async()=>{throw Error('save failed');};r=await(await w.fetch(req({faq:'FAQ',consent:true}),env)).json();assert.equal(r.storage,'failed');
 env.AI_ENABLED='false';quota=true;r=await(await w.fetch(req({}),env)).json();assert.equal(r.mode,'faq');assert.equal(calls,1);
-console.log('7 checks passed: auth, validation, consent, AI, quota, failed save, disabled AI');
+const areq=(auth='test')=>new Request('https://worker.test/admin?days=7',{headers:{Authorization:`Bearer ${auth}`}});
+assert.equal((await w.fetch(areq('wrong'),env)).status,401);
+env.DB.prepare=()=>({bind(){return this;},all:async()=>({results:[{session:'s',role:'user',text:'hi',created_at:1}]})});
+r=await(await w.fetch(areq(),env)).json();assert.equal(r.days,7);assert.equal(r.rows.length,1);assert.equal(r.truncated,false);
+const lreq=(b,auth='test')=>new Request('https://worker.test/lead',{method:'POST',headers:{Authorization:`Bearer ${auth}`},body:JSON.stringify(b)});
+let leadRuns=0,leadCap=true;env.DB.prepare=()=>({bind(){return this;},run:async()=>{leadRuns++;},first:async()=>leadCap?{count:1}:null,all:async()=>({results:[]})});
+assert.equal((await w.fetch(lreq({phone:'615894875'},'wrong'),env)).status,401);
+assert.equal((await w.fetch(lreq({phone:'abc'}),env)).status,400);
+r=await(await w.fetch(lreq({phone:'+252 61 589 4875',note:'Qiimaha'}),env)).json();assert.equal(r.saved,true);
+leadCap=false;assert.equal((await w.fetch(lreq({phone:'+252615894875'}),env)).status,429);
+console.log('13 checks passed: chat (auth, validation, consent, AI, quota, failed save, disabled AI), admin (auth, list), lead (auth, invalid phone, saved, daily cap)');
