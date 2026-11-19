@@ -14,7 +14,7 @@ export default function CookiePolicy() {
         <div className="max-w-4xl mx-auto px-6 lg:px-12 bg-white dark:bg-slate-900 rounded-2xl shadow-sm p-8 md:p-12 border border-gray-100 dark:border-slate-800">
           <h1 className="text-4xl font-bold mb-8 text-secondary dark:text-white">Cookie Policy</h1>
           <div className="prose dark:prose-invert max-w-none text-text/80 dark:text-gray-300">
-            <p className="mb-4">Last updated: July 6, 2026</p>
+            <p className="mb-4">Last updated: November 19, 2026</p>
 
             <p className="mb-6">
               This Cookie Policy explains how OneStep Digital uses cookies and similar technologies when you
@@ -37,11 +37,16 @@ export default function CookiePolicy() {
                 <strong>Analytics:</strong> to collect aggregated, non-identifying data about how visitors use
                 our website so we can improve it.
               </li>
+              <li>
+                <strong>Advertising:</strong> the Meta Pixel (Facebook) records visits to our pages so we can measure
+                and improve our Facebook and Instagram ads and show ads to people who visited our website.
+              </li>
             </ul>
 
             <h2 className="text-2xl font-bold mt-8 mb-4 text-secondary dark:text-white">3. Third-Party Tools</h2>
             <p className="mb-6">
-              We use analytics provided by our hosting platform to measure website traffic and performance.
+              We use analytics provided by our hosting platform to measure website traffic and performance, and
+              the Meta Pixel from Meta Platforms (Facebook/Instagram) to measure our advertising.
               These tools may set their own cookies or use similar technologies, subject to their own privacy
               practices.
             </p>
