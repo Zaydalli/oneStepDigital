@@ -40,7 +40,6 @@ export default function PrivacyPolicy() {
             <ul className="list-disc pl-6 mb-6 space-y-1">
               <li>Messages you type in the chat are sent to our server and to Cloudflare, which runs the automated assistant (Cloudflare Workers AI) that writes some replies. Automated replies can be wrong; confirm prices and agreements with our team.</li>
               <li>Chat messages are not stored unless you tick &ldquo;Kaydi sheekadan si kooxdu kuu caawiso&rdquo;. If you do, that conversation is stored in Cloudflare (D1) for up to 30 days and a cookie (<code>os_chat</code>) links your messages for up to 30 days.</li>
-              <li>If you choose to leave your WhatsApp number in the chat, we store the number and your recent chat questions for up to 30 days so our team can contact you.</li>
               <li>Please do not share passwords, payment card details or other sensitive information in the chat.</li>
             </ul>
 
@@ -58,14 +57,14 @@ export default function PrivacyPolicy() {
               third-party form delivery service (FormSubmit) so that your message reaches our team by email.
               We may also use trusted service providers (such as our hosting and analytics providers) who
               process data on our behalf under appropriate safeguards. The website chat assistant uses Cloudflare
-              (Workers AI and D1) to generate replies and, only when you choose, to store chats and contact numbers.
+              (Workers AI and D1) to generate replies and, only when you choose, to store chats.
             </p>
 
             <h2 className="text-2xl font-bold mt-8 mb-4 text-secondary dark:text-white">4. Data Retention</h2>
             <p className="mb-6">
               We keep your information only for as long as needed to respond to your enquiry and provide our
-              services, or as required by applicable law. Saved chat conversations and numbers left in the chat
-              are deleted automatically after about 30 days.
+              services, or as required by applicable law. Saved chat conversations are deleted
+              automatically after about 30 days.
             </p>
 
             <h2 className="text-2xl font-bold mt-8 mb-4 text-secondary dark:text-white">5. Your Rights</h2>
