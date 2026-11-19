@@ -12,4 +12,8 @@ r=await(await w.fetch(req({consent:true}),env)).json();assert.equal(r.mode,'ai')
 quota=false;r=await(await w.fetch(req({consent:false}),env)).json();assert.equal(r.mode,'faq');assert.equal(calls,1);
 env.DB.batch=async()=>{throw Error('save failed');};r=await(await w.fetch(req({faq:'FAQ',consent:true}),env)).json();assert.equal(r.storage,'failed');
 env.AI_ENABLED='false';quota=true;r=await(await w.fetch(req({}),env)).json();assert.equal(r.mode,'faq');assert.equal(calls,1);
-console.log('7 checks passed: auth, validation, consent, AI, quota, failed save, disabled AI');
+const areq=(auth='test')=>new Request('https://worker.test/admin?days=7',{headers:{Authorization:`Bearer ${auth}`}});
+assert.equal((await w.fetch(areq('wrong'),env)).status,401);
+env.DB.prepare=()=>({bind(){return this;},all:async()=>({results:[{session:'s',role:'user',text:'hi',created_at:1}]})});
+r=await(await w.fetch(areq(),env)).json();assert.equal(r.days,7);assert.equal(r.rows.length,1);assert.equal(r.truncated,false);
+console.log('9 checks passed: auth, validation, consent, AI, quota, failed save, disabled AI, admin auth, admin list');

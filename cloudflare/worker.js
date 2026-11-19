@@ -1,9 +1,20 @@
 const fallback = "Fadlan kooxda kala xiriir WhatsApp +252615894875 ama info@onestepdigital.co.";
 const json = (body, status=200) => Response.json(body,{status,headers:{"Cache-Control":"no-store"}});
+// Read-only listing for the private dashboard on the website. Same bearer secret as /chat.
+async function admin(req,env){
+ const days=Math.min(30,Math.max(1,Number(new URL(req.url).searchParams.get("days"))||30));
+ const max=2000;
+ try{
+  const r=await env.DB.prepare("SELECT session,role,text,created_at FROM messages WHERE created_at>=? ORDER BY created_at DESC LIMIT ?").bind(Date.now()-days*86400000,max).all();
+  return json({days,rows:r.results,truncated:r.results.length===max});
+ }catch{return json({error:"Database unavailable"},503);}
+}
 export default {
  async fetch(req, env) {
   if (!env.CHAT_SECRET || req.headers.get("Authorization") !== `Bearer ${env.CHAT_SECRET}`) return json({error:"Unauthorized"},401);
-  if(req.method!=="POST" || new URL(req.url).pathname!=="/chat") return json({error:"Not found"},404);
+  const path=new URL(req.url).pathname;
+  if(req.method==="GET" && path==="/admin") return admin(req,env);
+  if(req.method!=="POST" || path!=="/chat") return json({error:"Not found"},404);
   const raw=await req.text(); if(raw.length>6000) return json({error:"Too large"},413);
   let b;try{b=JSON.parse(raw);}catch{return json({error:"Invalid JSON"},400);}
   if(typeof b.message!=="string"||!b.message.trim()||b.message.length>1000||!/^[-a-zA-Z0-9]{20,80}$/.test(b.session||"")) return json({error:"Invalid input"},400);
