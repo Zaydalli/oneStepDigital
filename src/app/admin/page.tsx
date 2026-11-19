@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { LogOut, MessageSquare, Lock } from "lucide-react";
+import { LogOut, MessageSquare, Lock, Phone } from "lucide-react";
 import { adminConfigured, fetchListing, isAdmin, type ChatRow } from "@/lib/admin";
 import { login, logout } from "./actions";
 
@@ -9,6 +9,14 @@ export const metadata: Metadata = { title: "Admin | OneStep Digital", robots: { 
 const TZ = "Africa/Mogadishu";
 const when = (ms: number) => new Intl.DateTimeFormat("en-GB", { timeZone: TZ, day: "2-digit", month: "short", hour: "2-digit", minute: "2-digit" }).format(ms);
 const dayKey = (ms: number) => new Intl.DateTimeFormat("en-CA", { timeZone: TZ }).format(ms);
+
+// Local Somali numbers (61xxxxxxx / 061xxxxxxx) need the 252 country code for wa.me.
+function waNumber(phone: string): string {
+  const digits = phone.replace(/\D/g, "");
+  if (digits.startsWith("0")) return "252" + digits.slice(1);
+  if (digits.length === 9 && /^[67]/.test(digits)) return "252" + digits;
+  return digits;
+}
 
 type Props = { searchParams: Promise<{ e?: string; days?: string }> };
 
@@ -48,6 +56,7 @@ export default async function AdminPage({ searchParams }: Props) {
     .map(([session, rows]) => ({ session, rows: rows.sort((a, b) => a.created_at - b.created_at), last: Math.max(...rows.map(r => r.created_at)) }))
     .sort((a, b) => b.last - a.last);
 
+  const leads = listing.leads ?? [];
   const today = dayKey(Date.now());
   const userRows = listing.rows.filter(r => r.role === "user");
   const todayCount = conversations.filter(c => dayKey(c.last) === today).length;
@@ -66,12 +75,22 @@ export default async function AdminPage({ searchParams }: Props) {
       </div>
     </header>
 
-    <section className="mt-6 grid grid-cols-3 gap-3">
+    <section className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
+      {stat("Leads (lambarro)", leads.length)}
       {stat("Wadahadal maanta", todayCount)}
       {stat(`Wadahadal (${days === 1 ? "24 saac" : `${days} maalin`})`, conversations.length)}
       {stat("Su'aalo", userRows.length)}
     </section>
     {listing.truncated && <p className="mt-2 text-xs text-amber-600">Kaliya 2,000-ka farriimood ee ugu dambeeyay ayaa la muujiyay.</p>}
+
+    <section className="mt-6 rounded-xl border-2 border-green-600/40 bg-white p-4 dark:bg-slate-900">
+      <h2 className="mb-2 flex items-center gap-2 font-semibold"><Phone size={16} /> Dad codsaday in lala soo xiriiro ({leads.length})</h2>
+      {leads.length === 0 ? <p className="text-sm text-slate-500">Wali ma jiraan.</p> :
+      <ul className="divide-y divide-slate-200 text-sm dark:divide-slate-800">{leads.map(l => <li key={l.id} className="flex flex-wrap items-center justify-between gap-2 py-2">
+        <div className="min-w-0"><p className="font-mono font-semibold">{l.phone}</p><p className="truncate text-slate-600 dark:text-slate-400">{l.note || "—"}</p></div>
+        <div className="flex shrink-0 items-center gap-3"><span className="text-xs text-slate-500">{when(l.created_at)}</span><a href={`https://wa.me/${waNumber(l.phone)}`} target="_blank" rel="noopener noreferrer" className="rounded-full bg-green-700 px-3 py-1 text-xs font-semibold text-white">WhatsApp</a></div>
+      </li>)}</ul>}
+    </section>
 
     {top.length > 0 && <section className="mt-6 rounded-xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
       <h2 className="mb-2 font-semibold">Su&apos;aalaha ugu badan</h2>

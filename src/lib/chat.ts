@@ -26,3 +26,16 @@ export function faq(message: string): string | null {
   if (/xiriir|contact|whatsapp|email|qof|address|xarun|meesha|muqdisho/.test(text)) return "OneStep kala xiriir WhatsApp +252615894875 ama info@onestepdigital.co. Xaruntu waa Muqdisho. Badhanka hoose ayaa kuu furaya WhatsApp; adiga ayaa farriinta diraya.";
   return null;
 }
+
+/** Questions that show buying interest: the chat then offers a call-back. */
+export function wantsLead(message: string): boolean {
+  return /qiim|price|cost|package|xirm|immisa|lacag|adeeg|service|\bqr\b|menu|catalog|maps|reel|video|website|web|logo|ads|xayeysiis|social|facebook|instagram|tiktok|page|maamul|dalbo|order|event/.test(message.toLowerCase())
+    && !/refund|lacag[- ]?celin|cabasho|password/.test(message.toLowerCase());
+}
+
+/** WhatsApp link that opens with the visitor's question already typed (they still press send). */
+export function whatsappLink(question?: string): string {
+  const q = question?.trim().slice(0, 300);
+  const text = `Salaan OneStep, waxaan ka imid website-ka.${q ? ` Su'aashaydu: ${q}` : ""}`;
+  return `${handoffUrl}?text=${encodeURIComponent(text)}`;
+}

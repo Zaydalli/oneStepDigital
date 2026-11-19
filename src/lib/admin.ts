@@ -5,7 +5,8 @@ export const ADMIN_COOKIE = "os_admin";
 const MIN_PASSWORD = 12;
 
 export type ChatRow = { session: string; role: "user" | "assistant"; text: string; created_at: number };
-export type Listing = { days: number; rows: ChatRow[]; truncated: boolean };
+export type Lead = { id: string; phone: string; note: string; created_at: number };
+export type Listing = { days: number; rows: ChatRow[]; truncated: boolean; leads?: Lead[] };
 
 /** Admin is disabled unless a strong password and the Worker settings exist. */
 export function adminConfigured(): boolean {
