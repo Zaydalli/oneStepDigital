@@ -20,7 +20,7 @@ export default function OneStepChat() {
     event?.preventDefault(); const message = (preset ?? input).trim(); if (!message || busy) return;
     setInput(""); setMessages(previous => [...previous.slice(-18), { role: "user", text: message }]); setBusy(true);
     try {
-      const response = await fetch("/api/chat", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ message, consent }), signal: AbortSignal.timeout(25000) });
+      const response = await fetch("/api/chat", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ message, consent, history: messages.slice(1).slice(-6).map(m => ({ role: m.role, text: m.text })) }), signal: AbortSignal.timeout(25000) });
       const data = await response.json();
       setStorage(data.storage === "saved" ? "Farriinta waa la kaydiyey (30 maalmood)." : consent ? "Kaydintu ma guulaysan; kooxda WhatsApp kala xiriir." : "");
       setMessages(previous => [...previous, { role: "assistant", text: typeof data.reply === "string" ? data.reply : "Fadlan WhatsApp noogala xiriir." }]);
