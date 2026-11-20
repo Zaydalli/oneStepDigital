@@ -15,7 +15,7 @@
   ],
   "vars": {
     "AI_ENABLED": "true",
-    "DAILY_LIMIT": "200",
+    "DAILY_LIMIT": "50",
     "GEMINI_MODEL": "gemini-2.5-flash-lite"
   },
   "triggers": {
