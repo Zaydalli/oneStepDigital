@@ -2,6 +2,7 @@
   "name": "onestep-chat",
   "main": "worker.js",
   "workers_dev": true,
+  "observability": { "enabled": true },
   "compatibility_date": "2026-11-01",
   "d1_databases": [
     {
