@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { answers, faq, handoffUrl } from "@/lib/chat";
+import { faq, handoffUrl } from "@/lib/chat";
 export const runtime = "nodejs";
 const fallback = "Fadlan kooxda kala xiriir WhatsApp +252615894875 ama info@onestepdigital.co.";
 export async function POST(req: NextRequest) {
@@ -14,7 +14,7 @@ export async function POST(req: NextRequest) {
  const {CLOUDFLARE_CHAT_URL,CLOUDFLARE_CHAT_SECRET}=process.env;
  if(CLOUDFLARE_CHAT_URL&&CLOUDFLARE_CHAT_SECRET){try{
   const url=new URL(CLOUDFLARE_CHAT_URL);if(url.protocol!=="https:")throw Error("HTTPS required");
-  const r=await fetch(url,{method:"POST",headers:{"Authorization":`Bearer ${CLOUDFLARE_CHAT_SECRET}`,"Content-Type":"application/json"},body:JSON.stringify({message:b.message,session,consent:b.consent===true,faq:known||null,answers:known?undefined:answers}),signal:AbortSignal.timeout(20000),cache:"no-store"});
+  const r=await fetch(url,{method:"POST",headers:{"Authorization":`Bearer ${CLOUDFLARE_CHAT_SECRET}`,"Content-Type":"application/json"},body:JSON.stringify({message:b.message,session,consent:b.consent===true,faq:known||null}),signal:AbortSignal.timeout(20000),cache:"no-store"});
   if(!r.ok)throw Error("Worker unavailable");const d=await r.json();
   if(typeof d.reply!=="string")throw Error("Invalid reply");
   return finish(d.reply,{mode:d.mode==="ai"?"ai":"faq",storage:d.storage});
