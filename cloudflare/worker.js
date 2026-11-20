@@ -5,9 +5,10 @@ async function gemini(env,system,history,message){
  const model=env.GEMINI_MODEL||"gemini-2.5-flash-lite";
  const contents=[...history.slice(-6).map(h=>({role:h.role==="assistant"?"model":"user",parts:[{text:h.content}]})),{role:"user",parts:[{text:message}]}];
  const r=await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent`,{method:"POST",headers:{"x-goog-api-key":env.GEMINI_API_KEY,"Content-Type":"application/json"},body:JSON.stringify({systemInstruction:{parts:[{text:system}]},contents,generationConfig:{maxOutputTokens:300,temperature:0.4}}),signal:AbortSignal.timeout(15000)});
- if(!r.ok) return null;
+ if(!r.ok){console.warn("gemini_error",r.status,model,(await r.text()).slice(0,400));return null;}
  const d=await r.json();
  const text=(d.candidates?.[0]?.content?.parts||[]).map(p=>p.text||"").join("").trim();
+ if(!text) console.warn("gemini_empty",model,JSON.stringify(d).slice(0,400));
  return text||null;
 }
 const fallback = "Fadlan kooxda kala xiriir WhatsApp +252615894875 ama info@onestepdigital.co.";
@@ -27,10 +28,11 @@ export default {
    storage="pending";
   }catch{storage="failed";}}
   let answer=typeof b.faq==="string"?b.faq.slice(0,2500):fallback,mode="faq";
+  if(!b.faq && env.AI_ENABLED==="true" && !env.GEMINI_API_KEY) console.warn("gemini_no_key");
   if(!b.faq && env.AI_ENABLED==="true" && env.GEMINI_API_KEY){
    // Gemini answers in the visitor's language. No daily cap of ours: Google's free-tier limit decides;
    // a 429 or any other failure falls back to the FAQ/WhatsApp text.
-   try{const g=await gemini(env,GEMINI_SYSTEM,history,b.message);if(g){answer=g.slice(0,1500);mode="ai";}}catch{}
+   try{const g=await gemini(env,GEMINI_SYSTEM,history,b.message);if(g){answer=g.slice(0,1500);mode="ai";}}catch(e){console.warn("gemini_exception",String(e).slice(0,200));}
   }
   if(saving && storage!=="failed"){
    try{const now=Date.now();await env.DB.batch([
