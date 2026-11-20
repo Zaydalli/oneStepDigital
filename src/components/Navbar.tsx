@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { Menu, X, ArrowRight, Phone } from "lucide-react";
+import { Menu, X, ArrowRight, Phone, Mail, MapPin } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ThemeToggle } from "./ThemeToggle";
 
@@ -40,7 +40,20 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="fixed top-0 sm:top-4 inset-x-0 z-50 max-w-6xl mx-auto px-4 sm:px-6">
+      {/* Top contact bar: visible at the top of the page, slides away once the visitor scrolls */}
+      <div
+        className={`fixed top-0 inset-x-0 z-50 h-9 bg-gradient-to-r from-blue-800 via-blue-700 to-blue-800 text-white text-xs sm:text-[13px] transition-transform duration-300 ${isScrolled ? "-translate-y-full" : "translate-y-0"}`}
+        aria-hidden={isScrolled}
+      >
+        <div className="max-w-6xl mx-auto h-full px-4 sm:px-6 flex items-center justify-center sm:justify-between gap-4">
+          <div className="flex items-center gap-4 sm:gap-6">
+            <a href="tel:+252615894875" tabIndex={isScrolled ? -1 : 0} className="flex items-center gap-1.5 hover:text-blue-100 transition-colors"><Phone size={13} /> +252 61 589 4875</a>
+            <a href="mailto:info@onestepdigital.co" tabIndex={isScrolled ? -1 : 0} className="flex items-center gap-1.5 hover:text-blue-100 transition-colors"><Mail size={13} /> info@onestepdigital.co</a>
+          </div>
+          <span className="hidden sm:flex items-center gap-1.5 text-blue-100"><MapPin size={13} /> Muqdisho, Soomaaliya</span>
+        </div>
+      </div>
+      <header className={`fixed inset-x-0 z-50 max-w-6xl mx-auto px-4 sm:px-6 transition-[top] duration-300 ${isScrolled ? "top-0 sm:top-4" : "top-11 sm:top-14"}`}>
         <div 
           className={`transition-all duration-300 ${
             isScrolled
