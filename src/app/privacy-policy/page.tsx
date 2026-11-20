@@ -14,7 +14,7 @@ export default function PrivacyPolicy() {
         <div className="max-w-4xl mx-auto px-6 lg:px-12 bg-white dark:bg-slate-900 rounded-2xl shadow-sm p-8 md:p-12 border border-gray-100 dark:border-slate-800">
           <h1 className="text-4xl font-bold mb-8 text-secondary dark:text-white">Privacy Policy</h1>
           <div className="prose dark:prose-invert max-w-none text-text/80 dark:text-gray-300">
-            <p className="mb-4">Last updated: November 19, 2026</p>
+            <p className="mb-4">Last updated: November 20, 2026</p>
 
             <p className="mb-6">
               This Privacy Policy explains how OneStep Digital (&ldquo;we&rdquo;, &ldquo;us&rdquo;, or &ldquo;our&rdquo;)
@@ -38,7 +38,7 @@ export default function PrivacyPolicy() {
 
             <h3 className="text-xl font-semibold mt-6 mb-3 text-secondary dark:text-white">Website chat assistant</h3>
             <ul className="list-disc pl-6 mb-6 space-y-1">
-              <li>Messages you type in the chat are sent to our server and to Cloudflare, which runs the automated assistant (Cloudflare Workers AI) that writes some replies. Automated replies can be wrong; confirm prices and agreements with our team.</li>
+              <li>Messages you type in the chat are sent to our server, to Cloudflare (which runs the chat service) and to Google (the Gemini API), which writes some replies. We currently use the free tier of the Gemini API, under which Google may use these messages, including through human review, to improve its products. Do not include personal or sensitive information in your chat messages. Automated replies can be wrong; confirm prices and agreements with our team.</li>
               <li>Chat messages are not stored unless you tick &ldquo;Kaydi sheekadan si kooxdu kuu caawiso&rdquo;. If you do, that conversation is stored in Cloudflare (D1) for up to 30 days and a cookie (<code>os_chat</code>) links your messages for up to 30 days.</li>
               <li>Please do not share passwords, payment card details or other sensitive information in the chat.</li>
             </ul>
@@ -57,7 +57,7 @@ export default function PrivacyPolicy() {
               third-party form delivery service (FormSubmit) so that your message reaches our team by email.
               We use the Meta Pixel, which sends Meta (Facebook) information about your visit, such as the pages you view and your browser, to measure and target our ads. We may also use trusted service providers (such as our hosting and analytics providers) who
               process data on our behalf under appropriate safeguards. The website chat assistant uses Cloudflare
-              (Workers AI and D1) to generate replies and, only when you choose, to store chats.
+              (Workers and D1) and Google (Gemini API) to generate replies and, only when you choose, to store chats.
             </p>
 
             <h2 className="text-2xl font-bold mt-8 mb-4 text-secondary dark:text-white">4. Data Retention</h2>
