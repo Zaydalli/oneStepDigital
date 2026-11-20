@@ -38,7 +38,7 @@ export default function PrivacyPolicy() {
 
             <h3 className="text-xl font-semibold mt-6 mb-3 text-secondary dark:text-white">Website chat assistant</h3>
             <ul className="list-disc pl-6 mb-6 space-y-1">
-              <li>Messages you type in the chat are sent to our server, to Cloudflare (which runs the chat service) and to Google (the Gemini API), which writes some replies. Automated replies can be wrong; confirm prices and agreements with our team.</li>
+              <li>Messages you type in the chat are sent to our server, to Cloudflare (which runs the chat service) and to Google (the Gemini API), which writes some replies. We currently use the free tier of the Gemini API, under which Google may use these messages, including through human review, to improve its products. Do not include personal or sensitive information in your chat messages. Automated replies can be wrong; confirm prices and agreements with our team.</li>
               <li>Chat messages are not stored unless you tick &ldquo;Kaydi sheekadan si kooxdu kuu caawiso&rdquo;. If you do, that conversation is stored in Cloudflare (D1) for up to 30 days and a cookie (<code>os_chat</code>) links your messages for up to 30 days.</li>
               <li>Please do not share passwords, payment card details or other sensitive information in the chat.</li>
             </ul>
