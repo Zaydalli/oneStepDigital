@@ -1,7 +1,8 @@
 "use client";
 
-import { Globe, Palette, Target, Camera, ArrowRight, MessageSquare } from "lucide-react";
+import { ArrowRight, MessageSquare } from "lucide-react";
 import { motion } from "framer-motion";
+import ServiceArt from "./ServiceArt";
 
 export default function CustomServices() {
   return (
@@ -37,9 +38,7 @@ export default function CustomServices() {
                 transition={{ duration: 0.4 }}
                 className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
               >
-                <div className="w-11 h-11 rounded-xl bg-primary/30 text-cyan-300 flex items-center justify-center mb-4">
-                  <Globe size={22} />
-                </div>
+                <ServiceArt kind="website" compact />
                 <h3 className="text-lg font-bold mb-2 text-white">Website Development</h3>
                 <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">Websites degdeg ah, casri ah, loona habeeyay mobaylada si ay macaamiil cusub kuugu keenaan.</p>
               </motion.div>
@@ -51,9 +50,7 @@ export default function CustomServices() {
                 transition={{ duration: 0.4, delay: 0.1 }}
                 className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
               >
-                <div className="w-11 h-11 rounded-xl bg-primary/30 text-cyan-300 flex items-center justify-center mb-4">
-                  <Palette size={22} />
-                </div>
+                <ServiceArt kind="logo" compact />
                 <h3 className="text-lg font-bold mb-2 text-white">Logo & Brand Identity</h3>
                 <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">Naqshado calaamad (Logo) iyo aqoonsi shirkadeed oo xirfadeysan oo suuqa kugu dhex muujiya.</p>
               </motion.div>
@@ -65,9 +62,7 @@ export default function CustomServices() {
                 transition={{ duration: 0.4, delay: 0.2 }}
                 className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
               >
-                <div className="w-11 h-11 rounded-xl bg-primary/30 text-cyan-300 flex items-center justify-center mb-4">
-                  <Target size={22} />
-                </div>
+                <ServiceArt kind="ads" compact />
                 <h3 className="text-lg font-bold mb-2 text-white">Meta Ads & Scaling</h3>
                 <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">Xayeysiisyada Facebook & Instagram ee tooska ugu bartilmaameedsada macaamiisha wax iibsanaya.</p>
               </motion.div>
@@ -79,9 +74,7 @@ export default function CustomServices() {
                 transition={{ duration: 0.4, delay: 0.3 }}
                 className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
               >
-                <div className="w-11 h-11 rounded-xl bg-primary/30 text-cyan-300 flex items-center justify-center mb-4">
-                  <Camera size={22} />
-                </div>
+                <ServiceArt kind="event" compact />
                 <h3 className="text-lg font-bold mb-2 text-white">Event & Video Coverage</h3>
                 <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">Duubista munaasabadaha iyo soo-bandhigidda alaabaha cusub oo leh tayo cinematic ah.</p>
               </motion.div>
