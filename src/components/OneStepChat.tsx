@@ -39,7 +39,6 @@ export default function OneStepChat() {
       <label className="flex items-center gap-2 px-3 pt-2 text-[11px] text-slate-500 dark:text-slate-400"><input type="checkbox" checked={consent} onChange={e => setConsent(e.target.checked)} /> Kaydi sheekadan si kooxdu kuu caawiso</label>
       {storage && <p role="status" className="px-3 text-[11px] text-slate-500 dark:text-slate-400">{storage}</p>}
       <form onSubmit={send} className="flex gap-2 p-3"><input ref={field} aria-label="Farriintaada" value={input} onChange={event => setInput(event.target.value)} maxLength={1000} placeholder="Qor su'aashaada…" className="min-w-0 flex-1 rounded-lg border border-slate-300 bg-transparent px-3 py-2 text-sm dark:border-slate-600" /><button disabled={busy || !input.trim()} aria-label="Dir su'aasha" className="rounded-lg bg-blue-600 p-3 text-white disabled:opacity-40"><Send size={18} /></button></form>
-      <a href={handoffUrl} target="_blank" rel="noopener noreferrer" className="bg-green-700 px-4 py-2.5 text-center text-sm font-medium text-white">Kooxda kala hadal WhatsApp ↗</a>
       <p className="px-3 py-1.5 text-[11px] text-slate-500">Jawaabaha xaqiiji marka ay khuseeyaan qiime ama heshiis. <a className="underline" href="/privacy-policy">Asturnaanta</a></p>
     </section>}
     {!open && <div className="mb-3 flex flex-col items-center gap-3">
