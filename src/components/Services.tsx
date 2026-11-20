@@ -2,6 +2,7 @@
 
 import { QrCode, Video, Share2, Palette, ArrowRight, CheckCircle2, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
+import ServiceArt from "./ServiceArt";
 
 export default function Services() {
   return (
@@ -31,9 +32,10 @@ export default function Services() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="rounded-[28px] p-7 sm:p-9 flex flex-col justify-between transition-all duration-300 bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800/90 shadow-lg shadow-slate-900/5 hover:border-slate-300 dark:hover:border-slate-700"
+            className="group rounded-[28px] p-7 sm:p-9 flex flex-col justify-between transition-all duration-300 bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800/90 shadow-lg shadow-slate-900/5 hover:border-slate-300 dark:hover:border-slate-700"
           >
             <div>
+              <ServiceArt kind="starter" />
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 rounded-2xl bg-primary/10 dark:bg-primary/20 text-primary flex items-center justify-center">
@@ -99,9 +101,10 @@ export default function Services() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="rounded-[28px] p-7 sm:p-9 flex flex-col justify-between transition-all duration-300 bg-white dark:bg-slate-900 border-2 border-primary shadow-xl shadow-primary/10 relative"
+            className="group rounded-[28px] p-7 sm:p-9 flex flex-col justify-between transition-all duration-300 bg-white dark:bg-slate-900 border-2 border-primary shadow-xl shadow-primary/10 relative"
           >
             <div>
+              <ServiceArt kind="content" />
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 rounded-2xl bg-accent/20 text-accent flex items-center justify-center">
@@ -155,9 +158,10 @@ export default function Services() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="rounded-[28px] p-7 sm:p-9 flex flex-col justify-between transition-all duration-300 bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800/90 shadow-lg shadow-slate-900/5 hover:border-slate-300 dark:hover:border-slate-700"
+            className="group rounded-[28px] p-7 sm:p-9 flex flex-col justify-between transition-all duration-300 bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800/90 shadow-lg shadow-slate-900/5 hover:border-slate-300 dark:hover:border-slate-700"
           >
             <div>
+              <ServiceArt kind="growth" />
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 rounded-2xl bg-primary/10 dark:bg-primary/20 text-primary flex items-center justify-center">
@@ -211,9 +215,10 @@ export default function Services() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="rounded-[28px] p-7 sm:p-9 flex flex-col justify-between transition-all duration-300 bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800/90 shadow-lg shadow-slate-900/5 hover:border-slate-300 dark:hover:border-slate-700"
+            className="group rounded-[28px] p-7 sm:p-9 flex flex-col justify-between transition-all duration-300 bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800/90 shadow-lg shadow-slate-900/5 hover:border-slate-300 dark:hover:border-slate-700"
           >
             <div>
+              <ServiceArt kind="custom" />
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 rounded-2xl bg-secondary/10 dark:bg-slate-800 text-secondary dark:text-white flex items-center justify-center">
