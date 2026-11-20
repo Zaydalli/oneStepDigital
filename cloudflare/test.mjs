@@ -15,4 +15,13 @@ label='so other';r=await(await w.fetch(req({answers}),env)).json();assert.equal(
 calls=1;quota=false;r=await(await w.fetch(req({consent:false}),env)).json();assert.equal(r.mode,'faq');assert.equal(calls,1);
 env.DB.batch=async()=>{throw Error('save failed');};r=await(await w.fetch(req({faq:'FAQ',consent:true}),env)).json();assert.equal(r.storage,'failed');
 env.AI_ENABLED='false';quota=true;r=await(await w.fetch(req({}),env)).json();assert.equal(r.mode,'faq');assert.equal(calls,1);
+// Gemini path: key present → direct answer via fetch; failure → FAQ fallback.
+const realFetch=globalThis.fetch;let gBody;
+globalThis.fetch=async(u,o)=>{gBody=JSON.parse(o.body);assert.match(String(u),/generativelanguage\.googleapis\.com.*gemini-2\.5-flash-lite:generateContent/);assert.equal(o.headers['x-goog-api-key'],'gk');return new Response(JSON.stringify({candidates:[{content:{parts:[{text:'Bariis iyo hilib ayaa fiican.'}]}}]}),{status:200});};
+const genv={...env,AI_ENABLED:'true',GEMINI_API_KEY:'gk'};quota=true;calls=0;
+r=await(await w.fetch(req({}),genv)).json();assert.equal(r.reply,'Bariis iyo hilib ayaa fiican.');assert.equal(r.mode,'ai');assert.equal(calls,0);assert.ok(gBody.systemInstruction.parts[0].text.includes('OneStep'));
+globalThis.fetch=async()=>new Response('{}',{status:500});
+r=await(await w.fetch(req({}),genv)).json();assert.equal(r.mode,'faq');
+globalThis.fetch=realFetch;
+console.log('Gemini: direct answer + failure fallback OK');
 console.log('11 checks passed: auth, validation, consent, Somali business → written answer, English free answer, handoff → team, Somali general → free AI answer, quota, failed save, disabled AI');
