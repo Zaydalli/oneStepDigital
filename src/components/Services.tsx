@@ -8,6 +8,7 @@ import ServiceArt, { type Kind } from "./ServiceArt";
 type Service = {
   key: string;
   art: Kind;
+  recommended?: boolean;
   title: string;
   icon: LucideIcon;
   pkg: { name: string; price?: string; period?: string; tag: string; features: string[]; note?: string };
@@ -16,13 +17,13 @@ type Service = {
 // Prices and contents follow the OneStep rate card. Packages share the "included" list below.
 const services: Service[] = [
   { key: "digital", art: "digital", title: "Digital", icon: Wand2, pkg: { name: "Digital", price: "$150", period: "bishii", tag: "Naqshado & muuqaallo AI ah", features: ["6 naqshadood", "2 muuqaal oo AI ah"], note: "Waxaan adeegsannaa sawirrada alaabtaada iyo goobtaada." } },
-  { key: "duubis", art: "duubis", title: "Duubis", icon: Video, pkg: { name: "Duubis", price: "$225", period: "bishii", tag: "Duubis goobta ah & naqshado", features: ["6 naqshadood", "2 muuqaal oo goobta lagu duubo"], note: "Hal booqasho duubis bishii, hal goob oo magaalada ah." } },
+  { key: "duubis", art: "duubis", recommended: true, title: "Duubis", icon: Video, pkg: { name: "Duubis", price: "$225", period: "bishii", tag: "Duubis goobta ah & naqshado", features: ["6 naqshadood", "2 muuqaal oo goobta lagu duubo"], note: "Hal booqasho duubis bishii, hal goob oo magaalada ah." } },
   { key: "plus", art: "plus", title: "Duubis Plus", icon: Clapperboard, pkg: { name: "Duubis Plus", price: "$300", period: "bishii", tag: "Duubis, AI & naqshado", features: ["10 naqshadood", "2 muuqaal oo goobta lagu duubo", "2 muuqaal oo AI ah"], note: "4 muuqaal bishii: 2 duubis ah iyo 2 AI ah." } },
   { key: "web", art: "website", title: "Website & Apps", icon: Code2, pkg: { name: "Website & Apps", tag: "Adeeg dheeri ah", features: ["Naqshadaynta iyo dhisidda website-yada", "Dhisidda apps u gaar ah ganacsiga"] } },
   { key: "logo", art: "logo", title: "Logo & Branding", icon: Palette, pkg: { name: "Logo & Branding", tag: "Adeeg dheeri ah", features: ["Logo iyo aqoonsiga ganacsiga"] } },
   { key: "ads", art: "ads", title: "Ololayaasha Meta", icon: Target, pkg: { name: "Ololayaasha Meta", tag: "Adeeg dheeri ah", features: ["Maamulka iyo qorshaynta ololayaasha Meta (Facebook & Instagram)"] } },
   { key: "extra", art: "event", title: "Duubis & Muuqaallo Dheeri", icon: Camera, pkg: { name: "Duubis & Muuqaallo Dheeri", tag: "Adeeg dheeri ah", features: ["Duubista munaasabadaha", "Naqshado iyo muuqaallo dheeraad ah", "Samaynta muuqaallada AI"] } },
-  { key: "connect", art: "connect", title: "WhatsApp & Google Maps", icon: MessageCircle, pkg: { name: "WhatsApp & Google Maps", tag: "Adeeg dheeri ah", features: ["Habaynta WhatsApp Business", "Ku darista iyo habaynta ganacsiga Google Maps"] } },
+  { key: "connect", art: "connect", title: "QR Menu, WhatsApp & Maps", icon: MessageCircle, pkg: { name: "QR Menu, WhatsApp & Google Maps", tag: "Adeeg dheeri ah", features: ["QR menu", "Habaynta WhatsApp Business", "Ku darista iyo habaynta ganacsiga Google Maps"] } },
 ];
 
 const included = ["Qorshaha nuxurka bisha", "Fikradaha iyo qoraalka muuqaallada", "Tafatir iyo cod-sharraxaad haddii loo baahdo", "Qorista qoraallada baraha bulshada", "Daabacaadda Facebook, Instagram iyo TikTok", "Maamulka xayeysiisyada Facebook iyo Instagram", "Warbixinta waxqabadka bisha"];
@@ -73,7 +74,7 @@ export default function Services() {
           {services.map((s, i) => (
             <motion.div key={s.key} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.05 }} className="w-1/2 md:w-1/4 px-2 sm:px-4">
               <button type="button" onClick={e => { lastTrigger.current = e.currentTarget; setActive(s); }} className="group w-full rounded-3xl py-3 text-center focus:outline-none focus-visible:ring-2 focus-visible:ring-primary" aria-haspopup="dialog">
-                <Badge icon={s.icon} />
+                <div className="relative"><Badge icon={s.icon} />{s.recommended && <span className="absolute -top-2 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-amber-400 px-2.5 py-0.5 text-[10px] sm:text-xs font-bold uppercase tracking-wide text-amber-950 shadow">Lagu Taliyay</span>}</div>
                 <h3 className="mt-5 text-base sm:text-lg font-bold text-blue-900 dark:text-blue-200 leading-snug">{s.title}</h3>
                 <span className="mt-1 inline-flex items-center gap-1 text-xs sm:text-sm font-semibold text-primary opacity-80 group-hover:opacity-100">
                   {s.pkg.price ? `${s.pkg.price} · ${s.pkg.period}` : "Qiime gaar ah"} <ArrowRight size={14} />

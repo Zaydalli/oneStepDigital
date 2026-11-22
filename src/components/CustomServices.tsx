@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, MessageSquare, Code2, Smartphone, Palette, Camera, Images, Wand2, Target, MessageCircle, MapPin } from "lucide-react";
+import { ArrowRight, MessageSquare, QrCode, Code2, Smartphone, Palette, Camera, Images, Wand2, Target, MessageCircle, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function CustomServices() {
@@ -28,7 +28,7 @@ export default function CustomServices() {
             </div>
 
             {/* Extra services (rate card) */}
-            <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 mb-12">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4 mb-12">
               {[
                 { icon: Code2, label: "Naqshadaynta iyo dhisidda website-yada" },
                 { icon: Smartphone, label: "Dhisidda apps u gaar ah ganacsiga" },
@@ -37,6 +37,7 @@ export default function CustomServices() {
                 { icon: Images, label: "Naqshado iyo muuqaallo dheeraad ah" },
                 { icon: Wand2, label: "Samaynta muuqaallada AI" },
                 { icon: Target, label: "Maamulka iyo qorshaynta ololayaasha Meta" },
+                { icon: QrCode, label: "QR menu" },
                 { icon: MessageCircle, label: "Habaynta WhatsApp Business" },
                 { icon: MapPin, label: "Ku darista iyo habaynta ganacsiga Google Maps" },
               ].map(({ icon: Icon, label }, i) => (
@@ -46,12 +47,12 @@ export default function CustomServices() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: i * 0.04 }}
-                  className="flex items-center gap-3 sm:gap-4 p-4 sm:p-5 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
+                  className="flex flex-col items-center text-center gap-3 p-4 sm:p-5 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
                 >
                   <div className="h-11 w-11 sm:h-12 sm:w-12 shrink-0 rounded-full bg-gradient-to-br from-blue-500 to-blue-800 flex items-center justify-center shadow-lg shadow-blue-900/40">
                     <Icon size={20} className="text-white" />
                   </div>
-                  <h3 className="text-sm sm:text-base font-semibold text-white leading-snug">{label}</h3>
+                  <h3 className="text-xs sm:text-sm font-semibold text-white leading-snug">{label}</h3>
                 </motion.div>
               ))}
             </div>

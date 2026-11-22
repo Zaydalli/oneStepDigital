@@ -20,13 +20,13 @@ export default function Pricing() {
     {
       name: "DUUBIS",
       subtitle: "Duubis goobta ah & naqshado",
-      badge: "",
+      badge: "Lagu Taliyay",
       price: "$225",
       period: "bishii",
       features: ["6 naqshadood", "2 muuqaal oo goobta lagu duubo"],
       supportNote: "Hal booqasho duubis bishii, hal goob oo magaalada ah.",
       noteLabel: "FG:",
-      recommended: false,
+      recommended: true,
       buttonText: "Dalbo Xirmadan",
     },
     {
@@ -82,28 +82,28 @@ export default function Pricing() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className={`rounded-[28px] p-8 sm:p-9 flex flex-col justify-between transition-all duration-300 relative ${
                 plan.recommended
-                  ? "bg-white dark:bg-slate-900 border-2 border-primary shadow-2xl shadow-primary/15 lg:-translate-y-2"
+                  ? "bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900 text-white border-2 border-blue-400/60 shadow-2xl shadow-blue-700/30 lg:-translate-y-3 lg:scale-[1.03]"
                   : "bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800/90 shadow-lg shadow-slate-900/5 hover:border-slate-300 dark:hover:border-slate-700"
               }`}
             >
               {plan.recommended && (
-                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-primary text-white text-xs font-bold uppercase tracking-wider py-1 px-4 rounded-full shadow-md">
+                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-amber-400 text-amber-950 text-xs font-bold uppercase tracking-wider py-1 px-4 rounded-full shadow-md">
                   {plan.badge}
                 </div>
               )}
 
               <div>
                 <div className="mb-6">
-                  <h3 className="text-xl sm:text-2xl font-bold text-secondary dark:text-white mb-1">{plan.name}</h3>
-                  <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-medium">{plan.subtitle}</p>
+                  <h3 className={`text-xl sm:text-2xl font-bold mb-1 ${plan.recommended ? "text-white" : "text-secondary dark:text-white"}`}>{plan.name}</h3>
+                  <p className={`text-xs sm:text-sm font-medium ${plan.recommended ? "text-blue-100" : "text-slate-500 dark:text-slate-400"}`}>{plan.subtitle}</p>
                 </div>
 
                 {/* Price Display */}
-                <div className="flex items-baseline gap-1.5 mb-6 pb-6 border-b border-slate-100 dark:border-slate-800">
-                  <span className="text-4xl sm:text-5xl font-black text-secondary dark:text-white tracking-tight">
+                <div className={`flex items-baseline gap-1.5 mb-6 pb-6 border-b ${plan.recommended ? "border-white/20" : "border-slate-100 dark:border-slate-800"}`}>
+                  <span className={`text-4xl sm:text-5xl font-black tracking-tight ${plan.recommended ? "text-white" : "text-secondary dark:text-white"}`}>
                     {plan.price}
                   </span>
-                  <span className="text-sm font-semibold text-slate-500 dark:text-slate-400">
+                  <span className={`text-sm font-semibold ${plan.recommended ? "text-blue-100" : "text-slate-500 dark:text-slate-400"}`}>
                     / {plan.period}
                   </span>
                 </div>
@@ -112,10 +112,10 @@ export default function Pricing() {
                 <div className="space-y-3 mb-6">
                   {plan.features.map((feature) => (
                     <div key={feature} className="flex items-start gap-3">
-                      <div className="w-5 h-5 rounded-full bg-primary/10 dark:bg-primary/20 text-primary flex items-center justify-center shrink-0 mt-0.5">
+                      <div className={`w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5 ${plan.recommended ? "bg-white/20 text-white" : "bg-primary/10 dark:bg-primary/20 text-primary"}`}>
                         <Check size={13} strokeWidth={3} />
                       </div>
-                      <span className="text-sm text-slate-700 dark:text-slate-200 font-medium leading-relaxed">
+                      <span className={`text-sm font-medium leading-relaxed ${plan.recommended ? "text-white" : "text-slate-700 dark:text-slate-200"}`}>
                         {feature}
                       </span>
                     </div>
@@ -124,9 +124,9 @@ export default function Pricing() {
 
                 {/* Support Note */}
                 {plan.supportNote && (
-                  <div className="bg-slate-50 dark:bg-slate-800/60 p-3.5 rounded-xl mb-8 border border-slate-200/60 dark:border-slate-700/60">
-                    <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-                      <strong className="text-secondary dark:text-white font-semibold">{plan.noteLabel}</strong> {plan.supportNote}
+                  <div className={`p-3.5 rounded-xl mb-8 border ${plan.recommended ? "bg-white/10 border-white/20" : "bg-slate-50 dark:bg-slate-800/60 border-slate-200/60 dark:border-slate-700/60"}`}>
+                    <p className={`text-xs leading-relaxed ${plan.recommended ? "text-blue-50" : "text-slate-600 dark:text-slate-400"}`}>
+                      <strong className={`font-semibold ${plan.recommended ? "text-white" : "text-secondary dark:text-white"}`}>{plan.noteLabel}</strong> {plan.supportNote}
                     </p>
                   </div>
                 )}
@@ -139,7 +139,7 @@ export default function Pricing() {
                 rel="noopener noreferrer"
                 className={`w-full py-4 rounded-full font-bold text-sm sm:text-base flex items-center justify-center gap-2 transition-all ${
                   plan.recommended
-                    ? "bg-primary hover:bg-blue-700 text-white shadow-lg shadow-primary/25"
+                    ? "bg-white hover:bg-blue-50 text-blue-800 shadow-lg shadow-blue-950/30"
                     : "bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-secondary dark:text-white"
                 }`}
               >
