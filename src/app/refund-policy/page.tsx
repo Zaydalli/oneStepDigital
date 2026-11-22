@@ -43,7 +43,7 @@ export default function RefundPolicy() {
 
             <h2 className="text-2xl font-bold mt-8 mb-4 text-secondary dark:text-white">4. Monthly Packages</h2>
             <p className="mb-6">
-              Monthly packages (such as Content Boost and Growth Management) can be cancelled for the next
+              Monthly packages (Digital, Duubis and Duubis Plus) can be cancelled for the next
               billing cycle. Fees for the current month are non-refundable once the work for that month has
               begun.
             </p>

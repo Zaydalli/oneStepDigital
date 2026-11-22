@@ -6,10 +6,10 @@ import { Facebook, Instagram } from "lucide-react";
 
 export default function Footer() {
   const services = [
-    { name: "Digital Menu & QR Code", href: "#services" },
-    { name: "Content Creation (Reels)", href: "#services" },
-    { name: "Social Media Management", href: "#services" },
-    { name: "Google Maps & Web Development", href: "#services" },
+    { name: "Naqshado & Muuqaallo AI", href: "#pricing" },
+    { name: "Duubis & Video", href: "#pricing" },
+    { name: "Social Media & Meta Ads", href: "#pricing" },
+    { name: "Website & Apps", href: "#services" },
   ];
 
   const company = [

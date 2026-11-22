@@ -26,7 +26,7 @@ export default function Stats() {
               Nidaam Dijitaal Ah
             </div>
             <div className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-              QR, Maps & WhatsApp isku xiran
+              Social Media, Ads & WhatsApp isku xiran
             </div>
           </motion.div>
 

@@ -8,7 +8,7 @@ const env={CHAT_SECRET:'test',AI_ENABLED:'true',GEMINI_API_KEY:'gk',GEMINI_MODEL
 const req=(b,auth='test')=>new Request('https://worker.test/chat',{method:'POST',headers:{Authorization:`Bearer ${auth}`},body:JSON.stringify({message:'hello',session:'12345678-1234-1234-1234-123456789012',...b})});
 assert.equal((await w.fetch(req({},'wrong'),env)).status,401);
 assert.equal((await w.fetch(req({message:7}),env)).status,400);
-let r=await (await w.fetch(req({faq:'FAQ',consent:false,history:[{role:'user',text:'Qiimaha'},{role:'assistant',text:'$120'}]}),env)).json();assert.equal(r.mode,'ai');assert.equal(gemCalls,1);assert.equal(writes,0);assert.equal(gBody.contents.length,3);assert.ok(gBody.systemInstruction.parts[0].text.includes('$120'));
+let r=await (await w.fetch(req({faq:'FAQ',consent:false,history:[{role:'user',text:'Qiimaha'},{role:'assistant',text:'$120'}]}),env)).json();assert.equal(r.mode,'ai');assert.equal(gemCalls,1);assert.equal(writes,0);assert.equal(gBody.contents.length,3);assert.ok(gBody.systemInstruction.parts[0].text.includes('$225'));
 r=await(await w.fetch(req({consent:true}),env)).json();assert.equal(r.mode,'ai');assert.equal(r.reply,'Bariis iyo hilib ayaa fiican.');assert.equal(r.storage,'saved');assert.equal(writes,1);assert.ok(gBody.systemInstruction.parts[0].text.includes('OneStep'));
 gemStatus=429;r=await(await w.fetch(req({}),env)).json();assert.equal(r.mode,'faq');r=await(await w.fetch(req({faq:'FAQ'}),env)).json();assert.equal(r.reply,'FAQ');gemStatus=200;
 const nokey={...env,GEMINI_API_KEY:undefined};gemCalls=0;r=await(await w.fetch(req({}),nokey)).json();assert.equal(r.mode,'faq');assert.equal(gemCalls,0);

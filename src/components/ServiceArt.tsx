@@ -1,7 +1,7 @@
 // Original illustrations for the service cards, in OneStep's blue palette.
 // Pure inline SVG: no image requests, crisp at any size, and they follow light/dark mode via the card background.
 
-type Kind = "starter" | "content" | "growth" | "custom" | "website" | "logo" | "ads" | "event";
+export type Kind = "digital" | "duubis" | "plus" | "connect" | "custom" | "website" | "logo" | "ads" | "event";
 
 const Defs = ({ id }: { id: string }) => (
   <defs>
@@ -16,18 +16,25 @@ function Art({ kind }: { kind: Kind }) {
   const id = `sa-${kind}`;
   const B = `url(#${id}-b)`, S = `url(#${id}-s)`, A = `url(#${id}-a)`, SH = `url(#${id}-sh)`;
   switch (kind) {
-    case "starter": // phone with QR, map pin, chat bubble, sticker
+    case "digital": // designed posts + AI sparkles
+      return <>
+        <Defs id={id} />
+        <g filter={SH} transform="rotate(-8 110 88)"><rect x="62" y="34" width="86" height="104" rx="12" fill="#fff" /><rect x="70" y="42" width="70" height="56" rx="8" fill={S} /><circle cx="92" cy="62" r="8" fill="#fff" opacity=".8" /><path d="M72 96l22-20 16 14 12-10 18 16Z" fill="#1d4ed8" opacity=".55" /><rect x="72" y="108" width="50" height="7" rx="3.5" fill="#cbd5e1" /><rect x="72" y="121" width="34" height="6" rx="3" fill="#e2e8f0" /></g>
+        <g filter={SH}><rect x="150" y="26" width="86" height="112" rx="12" fill={B} /><rect x="158" y="34" width="70" height="64" rx="8" fill="#eff6ff" /><path d="M193 48l6 14 14 6-14 6-6 14-6-14-14-6 14-6Z" fill={A} /><rect x="160" y="108" width="52" height="7" rx="3.5" fill="#bfdbfe" /><rect x="160" y="121" width="36" height="6" rx="3" fill="#93c5fd" /></g>
+        <path d="M262 40l4 10 10 4-10 4-4 10-4-10-10-4 10-4Z" fill={A} /><path d="M268 104l3 7 7 3-7 3-3 7-3-7-7-3 7-3Z" fill="#93c5fd" /><path d="M44 52l3 7 7 3-7 3-3 7-3-7-7-3 7-3Z" fill="#7dd3fc" />
+      </>;
+    case "connect": // phone with WhatsApp-style chat, map pin, check
       return <>
         <Defs id={id} />
         <rect x="118" y="18" width="84" height="132" rx="16" fill={B} filter={SH} />
         <rect x="126" y="30" width="68" height="104" rx="8" fill="#fff" />
-        {[0, 1, 2].map(r => [0, 1, 2].map(c => (r + c) % 2 === 0 || (r === 1 && c === 1) ? <rect key={`${r}${c}`} x={136 + c * 17} y={44 + r * 17} width="14" height="14" rx="2" fill="#1e3a8a" /> : null))}
+        <rect x="134" y="42" width="40" height="14" rx="7" fill="#dbeafe" /><rect x="146" y="62" width="40" height="14" rx="7" fill="#22c55e" /><rect x="134" y="82" width="32" height="14" rx="7" fill="#dbeafe" />
         <rect x="136" y="102" width="48" height="8" rx="4" fill="#bfdbfe" /><rect x="144" y="116" width="32" height="6" rx="3" fill="#dbeafe" />
         <g filter={SH}><path d="M248 46c-15 0-26 11-26 25 0 19 26 43 26 43s26-24 26-43c0-14-11-25-26-25Z" fill={A} /><circle cx="248" cy="71" r="9" fill="#fff" /></g>
         <g filter={SH}><rect x="40" y="52" width="62" height="40" rx="14" fill={S} /><path d="M52 92l-6 12 16-12Z" fill="#0ea5e9" /><circle cx="58" cy="72" r="4" fill="#fff" /><circle cx="71" cy="72" r="4" fill="#fff" /><circle cx="84" cy="72" r="4" fill="#fff" /></g>
         <circle cx="70" cy="128" r="14" fill="#fff" stroke="#93c5fd" strokeWidth="3" /><path d="M64 128l4 4 8-8" stroke="#2563eb" strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round" />
       </>;
-    case "content": // phone with play button, film strip, sparkle
+    case "duubis": // phone with play button, film strip, sparkle
       return <>
         <Defs id={id} />
         <g filter={SH} transform="rotate(-8 90 90)"><rect x="40" y="44" width="110" height="74" rx="10" fill="#1e293b" />{[0, 1, 2, 3, 4].map(i => <rect key={i} x={48 + i * 20} y="50" width="12" height="7" rx="2" fill="#64748b" />)}{[0, 1, 2, 3, 4].map(i => <rect key={i} x={48 + i * 20} y="105" width="12" height="7" rx="2" fill="#64748b" />)}<rect x="48" y="62" width="94" height="38" rx="4" fill={S} /></g>
@@ -37,7 +44,7 @@ function Art({ kind }: { kind: Kind }) {
         <rect x="176" y="114" width="52" height="6" rx="3" fill="#bfdbfe" /><rect x="176" y="114" width="30" height="6" rx="3" fill="#2563eb" />
         <path d="M272 38l5 12 12 5-12 5-5 12-5-12-12-5 12-5Z" fill={A} /><path d="M282 104l3 7 7 3-7 3-3 7-3-7-7-3 7-3Z" fill="#93c5fd" />
       </>;
-    case "growth": // stacked posts, heart, rising chart
+    case "plus": // stacked posts, heart, rising chart
       return <>
         <Defs id={id} />
         <rect x="58" y="40" width="90" height="100" rx="14" fill="#dbeafe" transform="rotate(-10 103 90)" />
