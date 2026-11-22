@@ -2,25 +2,30 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { QrCode, Video, Megaphone, Code2, Palette, Target, Camera, CheckCircle2, ArrowRight, Sparkles, X, type LucideIcon } from "lucide-react";
-import ServiceArt from "./ServiceArt";
+import { Wand2, Video, Clapperboard, Code2, Palette, Target, Camera, MessageCircle, CheckCircle2, ArrowRight, Sparkles, X, type LucideIcon } from "lucide-react";
+import ServiceArt, { type Kind } from "./ServiceArt";
 
 type Service = {
-  key: "starter" | "content" | "growth" | "website" | "logo" | "ads" | "event";
+  key: string;
+  art: Kind;
   title: string;
   icon: LucideIcon;
   pkg: { name: string; price?: string; period?: string; tag: string; features: string[]; note?: string };
 };
 
+// Prices and contents follow the OneStep rate card. Packages share the "included" list below.
 const services: Service[] = [
-  { key: "starter", title: "QR & Digital Setup", icon: QrCode, pkg: { name: "Digital Starter", price: "$120", period: "hal mar", tag: "Basic Setup", features: ["QR / Digital Catalog Setup", "WhatsApp Business Setup & Optimization", "Google Maps Setup + Photos", "5 QR Stands / Display Cards", "100 Logo Stickers", "1 Welcome / Offer Post", "Final QR, Link & WhatsApp Test"] } },
-  { key: "content", title: "Content & Reels", icon: Video, pkg: { name: "Content Boost", price: "$150", period: "bishii", tag: "Engaging Visuals", features: ["2 Short Reels per month", "2 Hours Flexible Filming", "Editing & Text Captions", "Ready-to-Post Files"], note: "Adiga ayaa post-gareynaya faylasha diyaarka ah." } },
-  { key: "growth", title: "Social Media Management", icon: Megaphone, pkg: { name: "Growth Management", price: "$200", period: "bishii", tag: "Page Management", features: ["6 Posts / Designs per month", "2 Short Reels per month", "Posting (Facebook / Instagram / TikTok)", "Content Plan & Monthly Report"], note: "Kuma jiraan lacagta Meta Ads iyo ka jawaabidda DMs/comments." } },
-  { key: "website", title: "Website Development", icon: Code2, pkg: { name: "Website Development", tag: "Custom", features: ["Website degdeg ah oo casri ah", "Loo habeeyay mobile-ka", "Kuu keena macaamiil cusub"] } },
-  { key: "logo", title: "Logo & Branding", icon: Palette, pkg: { name: "Logo & Brand Identity", tag: "Custom", features: ["Naqshad logo (calaamad) xirfadeysan", "Aqoonsi shirkadeed (brand identity)", "Kugu muujiya suuqa dhexdiisa"] } },
-  { key: "ads", title: "Meta Ads", icon: Target, pkg: { name: "Meta Ads Management", tag: "Custom", features: ["Xayeysiisyada Facebook & Instagram", "Si toos ah u bartilmaameedsada macaamiisha wax iibsanaya"] } },
-  { key: "event", title: "Event & Video Coverage", icon: Camera, pkg: { name: "Event & Video Coverage", tag: "Custom", features: ["Duubista munaasabadaha", "Soo-bandhigidda alaabaha cusub", "Tayo cinematic ah"] } },
+  { key: "digital", art: "digital", title: "Digital", icon: Wand2, pkg: { name: "Digital", price: "$150", period: "bishii", tag: "Naqshado & muuqaallo AI ah", features: ["6 naqshadood", "2 muuqaal oo AI ah"], note: "Waxaan adeegsannaa sawirrada alaabtaada iyo goobtaada." } },
+  { key: "duubis", art: "duubis", title: "Duubis", icon: Video, pkg: { name: "Duubis", price: "$225", period: "bishii", tag: "Duubis goobta ah & naqshado", features: ["6 naqshadood", "2 muuqaal oo goobta lagu duubo"], note: "Hal booqasho duubis bishii, hal goob oo magaalada ah." } },
+  { key: "plus", art: "plus", title: "Duubis Plus", icon: Clapperboard, pkg: { name: "Duubis Plus", price: "$300", period: "bishii", tag: "Duubis, AI & naqshado", features: ["10 naqshadood", "2 muuqaal oo goobta lagu duubo", "2 muuqaal oo AI ah"], note: "4 muuqaal bishii: 2 duubis ah iyo 2 AI ah." } },
+  { key: "web", art: "website", title: "Website & Apps", icon: Code2, pkg: { name: "Website & Apps", tag: "Adeeg dheeri ah", features: ["Naqshadaynta iyo dhisidda website-yada", "Dhisidda apps u gaar ah ganacsiga"] } },
+  { key: "logo", art: "logo", title: "Logo & Branding", icon: Palette, pkg: { name: "Logo & Branding", tag: "Adeeg dheeri ah", features: ["Logo iyo aqoonsiga ganacsiga"] } },
+  { key: "ads", art: "ads", title: "Ololayaasha Meta", icon: Target, pkg: { name: "Ololayaasha Meta", tag: "Adeeg dheeri ah", features: ["Maamulka iyo qorshaynta ololayaasha Meta (Facebook & Instagram)"] } },
+  { key: "extra", art: "event", title: "Duubis & Muuqaallo Dheeri", icon: Camera, pkg: { name: "Duubis & Muuqaallo Dheeri", tag: "Adeeg dheeri ah", features: ["Duubista munaasabadaha", "Naqshado iyo muuqaallo dheeraad ah", "Samaynta muuqaallada AI"] } },
+  { key: "connect", art: "connect", title: "WhatsApp & Google Maps", icon: MessageCircle, pkg: { name: "WhatsApp & Google Maps", tag: "Adeeg dheeri ah", features: ["Habaynta WhatsApp Business", "Ku darista iyo habaynta ganacsiga Google Maps"] } },
 ];
+
+const included = ["Qorshaha nuxurka bisha", "Fikradaha iyo qoraalka muuqaallada", "Tafatir iyo cod-sharraxaad haddii loo baahdo", "Qorista qoraallada baraha bulshada", "Daabacaadda Facebook, Instagram iyo TikTok", "Maamulka xayeysiisyada Facebook iyo Instagram", "Warbixinta waxqabadka bisha"];
 
 const order = (s: Service) => `https://wa.me/252615894875?text=${encodeURIComponent(`Salaan OneStep, waxaan xiiseynayaa ${s.pkg.name}${s.pkg.price ? ` (${s.pkg.price} ${s.pkg.period})` : ""}.`)}`;
 
@@ -61,7 +66,7 @@ export default function Services() {
             <Sparkles size={14} /><span>Adeegyada Aan Bixinno</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-secondary dark:text-white tracking-tight leading-[1.18]">Adeegyadeenna</h2>
-          <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 mt-4 leading-relaxed">Riix adeeg kasta si aad u aragto xirmadiisa, qiimaha iyo waxa ku jira.</p>
+          <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 mt-4 leading-relaxed">Riix xirmo ama adeeg si aad u aragto qiimaha iyo waxa ku jira.</p>
         </div>
 
         <div className="flex flex-wrap justify-center gap-y-10 sm:gap-y-14">
@@ -91,13 +96,18 @@ export default function Services() {
                 </div>
                 <button ref={closeRef} type="button" onClick={() => setActive(null)} aria-label="Xir" className="rounded-full p-2 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800"><X size={20} /></button>
               </div>
-              <ServiceArt kind={active.key} compact={!active.pkg.price} />
+              <ServiceArt kind={active.art} compact={!active.pkg.price} />
               <p className="mb-5 text-3xl font-extrabold text-secondary dark:text-white">
                 {active.pkg.price ?? "Qiime gaar ah"} {active.pkg.period && <span className="text-base font-semibold text-slate-500">/ {active.pkg.period}</span>}
               </p>
               <ul className="space-y-3 mb-5">
                 {active.pkg.features.map(f => <li key={f} className="flex items-start gap-2.5 text-sm text-secondary dark:text-slate-200 font-medium"><CheckCircle2 size={17} className="text-primary shrink-0 mt-0.5" />{f}</li>)}
               </ul>
+              {active.pkg.price && <div className="mb-5 rounded-2xl bg-slate-50 dark:bg-slate-800/60 p-4">
+                <p className="mb-2 text-xs font-bold uppercase tracking-wider text-slate-500">Sidoo kale waxaa ku jira</p>
+                <ul className="grid gap-1.5 text-xs text-slate-600 dark:text-slate-300">{included.map(x => <li key={x}>• {x}</li>)}</ul>
+                <p className="mt-3 text-xs font-semibold text-primary dark:text-blue-300">+ $50 xayeysiis Meta ah · Muuqaal kasta ≤ 60 ilbiriqsi</p>
+              </div>}
               {active.pkg.note && <p className="mb-5 rounded-xl bg-amber-50 dark:bg-amber-900/20 px-4 py-3 text-xs text-amber-800 dark:text-amber-200">{active.pkg.note}</p>}
               <a href={order(active)} target="_blank" rel="noopener noreferrer" className="w-full py-3.5 rounded-full font-bold flex items-center justify-center gap-2 bg-primary hover:bg-blue-700 text-white shadow-lg shadow-primary/25 transition-colors">
                 {active.pkg.price ? "Dalbo Xirmadan" : "Codso Qiime"} <ArrowRight size={16} />

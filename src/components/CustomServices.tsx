@@ -1,8 +1,7 @@
 "use client";
 
-import { ArrowRight, MessageSquare } from "lucide-react";
+import { ArrowRight, MessageSquare, Code2, Smartphone, Palette, Camera, Images, Wand2, Target, MessageCircle, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
-import ServiceArt from "./ServiceArt";
 
 export default function CustomServices() {
   return (
@@ -18,67 +17,43 @@ export default function CustomServices() {
             {/* Header */}
             <div className="max-w-2xl mb-12">
               <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-primary/20 text-cyan-300 font-semibold text-xs uppercase tracking-wider mb-4 border border-primary/30">
-                Xalal Gaar Ah
+                Adeegyo Dheeri Ah
               </div>
               <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight mb-4">
-                Ma U Baahan Tahay Adeeg Khaas Ah?
+                Adeegyo Dheeri Ah
               </h2>
               <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
-                Haddii baahidaada aysan ku jirin xirmooyinka kor ku xusan, waxaan kuu dhiseynaa qorshe gaar ah oo la jaanqaadaya miisaaniyaddaada iyo hadafkaaga.
+                Si gooni ah u dalbo ama ku dar xirmadaada. Xirmo gaar ah ma rabtaa? Noo sheeg adeegyada iyo tirada aad u baahan tahay. Qiimaha waxaa lagu saleeyaa shaqada iyo tirada aad dalbato.
               </p>
             </div>
 
-            {/* 4 Custom Offerings Grid */}
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-              
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4 }}
-                className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
-              >
-                <ServiceArt kind="website" compact />
-                <h3 className="text-lg font-bold mb-2 text-white">Website Development</h3>
-                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">Websites degdeg ah, casri ah, loona habeeyay mobaylada si ay macaamiil cusub kuugu keenaan.</p>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: 0.1 }}
-                className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
-              >
-                <ServiceArt kind="logo" compact />
-                <h3 className="text-lg font-bold mb-2 text-white">Logo & Brand Identity</h3>
-                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">Naqshado calaamad (Logo) iyo aqoonsi shirkadeed oo xirfadeysan oo suuqa kugu dhex muujiya.</p>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: 0.2 }}
-                className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
-              >
-                <ServiceArt kind="ads" compact />
-                <h3 className="text-lg font-bold mb-2 text-white">Meta Ads & Scaling</h3>
-                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">Xayeysiisyada Facebook & Instagram ee tooska ugu bartilmaameedsada macaamiisha wax iibsanaya.</p>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: 0.3 }}
-                className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
-              >
-                <ServiceArt kind="event" compact />
-                <h3 className="text-lg font-bold mb-2 text-white">Event & Video Coverage</h3>
-                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">Duubista munaasabadaha iyo soo-bandhigidda alaabaha cusub oo leh tayo cinematic ah.</p>
-              </motion.div>
-
+            {/* Extra services (rate card) */}
+            <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 mb-12">
+              {[
+                { icon: Code2, label: "Naqshadaynta iyo dhisidda website-yada" },
+                { icon: Smartphone, label: "Dhisidda apps u gaar ah ganacsiga" },
+                { icon: Palette, label: "Logo iyo aqoonsiga ganacsiga" },
+                { icon: Camera, label: "Duubista munaasabadaha" },
+                { icon: Images, label: "Naqshado iyo muuqaallo dheeraad ah" },
+                { icon: Wand2, label: "Samaynta muuqaallada AI" },
+                { icon: Target, label: "Maamulka iyo qorshaynta ololayaasha Meta" },
+                { icon: MessageCircle, label: "Habaynta WhatsApp Business" },
+                { icon: MapPin, label: "Ku darista iyo habaynta ganacsiga Google Maps" },
+              ].map(({ icon: Icon, label }, i) => (
+                <motion.div
+                  key={label}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: i * 0.04 }}
+                  className="flex items-center gap-3 sm:gap-4 p-4 sm:p-5 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
+                >
+                  <div className="h-11 w-11 sm:h-12 sm:w-12 shrink-0 rounded-full bg-gradient-to-br from-blue-500 to-blue-800 flex items-center justify-center shadow-lg shadow-blue-900/40">
+                    <Icon size={20} className="text-white" />
+                  </div>
+                  <h3 className="text-sm sm:text-base font-semibold text-white leading-snug">{label}</h3>
+                </motion.div>
+              ))}
             </div>
 
             {/* Bottom Action */}
@@ -86,7 +61,7 @@ export default function CustomServices() {
               <div className="flex items-center gap-3">
                 <MessageSquare className="text-primary" size={24} />
                 <span className="text-sm sm:text-base font-semibold text-slate-200">
-                  Kala hadal kooxdayada qorshe kuu gaar ah
+                  Xirmo gaar ah ma rabtaa? Noo sheeg adeegyada iyo tirada aad u baahan tahay.
                 </span>
               </div>
               <a

@@ -23,8 +23,8 @@ export default function TermsOfService() {
 
             <h2 className="text-2xl font-bold mt-8 mb-4 text-secondary dark:text-white">1. Our Services</h2>
             <p className="mb-6">
-              OneStep Digital provides digital marketing services, including digital catalog and QR setup,
-              content creation, social media page management, website development, logo design, and related
+              OneStep Digital provides digital marketing services, including graphic design, AI and filmed video
+              content, social media page and Meta ads management, website and app development, logo design, and related
               services. The specific scope of any engagement is defined by the package you select or the custom
               quote we agree with you.
             </p>

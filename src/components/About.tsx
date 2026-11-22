@@ -66,10 +66,10 @@ export default function About() {
                 <span>Xalka OneStep Digital</span>
               </div>
               <h3 className="text-2xl font-bold text-secondary dark:text-white mb-4 leading-snug">
-                Nidaam Isku Xiran: QR Menu, Google Maps & WhatsApp
+                Nidaam Isku Xiran: Social Media, Xayeysiis & WhatsApp
               </h3>
               <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
-                OneStep Digital waxay kuu dhiseysaa nidaam fudud oo toos ah oo isku xira QR Menu-gaaga, cinwaankaaga saxda ah ee Google Maps-ka, iyo nidaamka WhatsApp-ka. Macaamiishu waxay ku helayaan wax ka yar 3 ilbiriqsi, dalabkoodana toos buu kuu soo gaarayaa.
+                OneStep waxay kuu samaysaa naqshado iyo muuqaallo xirfad leh, waxayna kuu maamushaa baraha bulshada iyo xayeysiisyada si macaamiishu toos kuugala soo xiriiraan WhatsApp.
               </p>
             </div>
 

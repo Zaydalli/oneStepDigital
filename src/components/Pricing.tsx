@@ -6,59 +6,51 @@ import { motion } from "framer-motion";
 export default function Pricing() {
   const plans = [
     {
-      name: "DIGITAL STARTER",
-      subtitle: "Basic Setup",
-      badge: "Ugu Habboon Billowga",
-      price: "$120",
-      period: "One Time",
-      features: [
-        "QR / Digital Catalog Setup",
-        "WhatsApp Business Setup & Optimization",
-        "Google Maps Setup + Photos",
-        "5 QR Stands / Display Cards",
-        "100 Logo Stickers",
-        "1 Welcome / Offer Post",
-        "Final QR, Link & WhatsApp Test",
-      ],
-      supportNote: "Wareejinta shaqada kadib, wixii wax ka beddel ah ama shaqo dheeri ah si gaar ah ayaa loo xisaabinayaa.",
-      noteLabel: "Shuruudda Taageerada:",
-      recommended: true,
-      buttonText: "Dalbo Xirmadan",
-    },
-    {
-      name: "CONTENT BOOST",
-      subtitle: "Engaging Visuals",
-      badge: "Visuals",
+      name: "DIGITAL",
+      subtitle: "Naqshado & muuqaallo AI ah",
+      badge: "",
       price: "$150",
-      period: "Monthly",
-      features: [
-        "2 Short Reels per month",
-        "2 Hours Flexible Filming",
-        "Editing & Text Captions",
-        "Ready-to-Post Files",
-      ],
-      supportNote: "Xirmadani waa abuuris muuqaal keliya. Macmiilka ayaa la wareegaya oo isagu post-gareynaya.",
+      period: "bishii",
+      features: ["6 naqshadood", "2 muuqaal oo AI ah"],
+      supportNote: "Waxaan adeegsannaa sawirrada alaabtaada iyo goobtaada.",
       noteLabel: "FG:",
       recommended: false,
       buttonText: "Dalbo Xirmadan",
     },
     {
-      name: "GROWTH MANAGEMENT",
-      subtitle: "Continuous Page Management",
-      badge: "Maamul",
-      price: "$200",
-      period: "Monthly",
-      features: [
-        "6 Posts / Designs per month",
-        "2 Short Reels per month",
-        "Posting (Facebook / Instagram / TikTok)",
-        "Content Plan & Monthly Report",
-      ],
-      supportNote: "Xirmadani kuma jirto bixinta lacagta Meta Ads-ka iyo u jawaabidda farriimaha (DMs/Comments).",
+      name: "DUUBIS",
+      subtitle: "Duubis goobta ah & naqshado",
+      badge: "",
+      price: "$225",
+      period: "bishii",
+      features: ["6 naqshadood", "2 muuqaal oo goobta lagu duubo"],
+      supportNote: "Hal booqasho duubis bishii, hal goob oo magaalada ah.",
       noteLabel: "FG:",
       recommended: false,
       buttonText: "Dalbo Xirmadan",
     },
+    {
+      name: "DUUBIS PLUS",
+      subtitle: "Duubis, AI & naqshado",
+      badge: "",
+      price: "$300",
+      period: "bishii",
+      features: ["10 naqshadood", "2 muuqaal oo goobta lagu duubo", "2 muuqaal oo AI ah"],
+      supportNote: "4 muuqaal bishii: 2 duubis ah iyo 2 AI ah.",
+      noteLabel: "FG:",
+      recommended: false,
+      buttonText: "Dalbo Xirmadan",
+    },
+  ];
+
+  const included = [
+    "Qorshaha nuxurka bisha",
+    "Fikradaha iyo qoraalka muuqaallada",
+    "Tafatir iyo cod-sharraxaad haddii loo baahdo",
+    "Qorista qoraallada baraha bulshada",
+    "Jadwalaynta iyo daabacaadda qoraallada Facebook, Instagram iyo TikTok",
+    "Maamulka xayeysiisyada Facebook iyo Instagram",
+    "Warbixinta waxqabadka bisha",
   ];
 
   return (
@@ -75,7 +67,7 @@ export default function Pricing() {
             Xirmooyinka & Qiimaha
           </h2>
           <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 mt-4 leading-relaxed">
-            Dooro xirmada kugu habboon si aad u dardar geliso kobocaaga dijitaalka ah. Ma jiraan lacago qarsoon.
+            OneStep waxay kuu samaysaa naqshado iyo muuqaallo xirfad leh, waxayna kuu maamushaa baraha bulshada iyo xayeysiisyada si macaamiishu toos kuugala soo xiriiraan WhatsApp.
           </p>
         </div>
 
@@ -112,7 +104,7 @@ export default function Pricing() {
                     {plan.price}
                   </span>
                   <span className="text-sm font-semibold text-slate-500 dark:text-slate-400">
-                    /{plan.period}
+                    / {plan.period}
                   </span>
                 </div>
 
@@ -156,6 +148,23 @@ export default function Pricing() {
               </a>
             </motion.div>
           ))}
+        </div>
+
+        {/* Shared by every package */}
+        <div className="mt-10 rounded-[28px] bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800/90 p-7 sm:p-9">
+          <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
+            <h3 className="text-lg sm:text-xl font-bold text-secondary dark:text-white">Xirmo kasta waxaa kale oo ku jira</h3>
+            <span className="rounded-full bg-primary/10 dark:bg-primary/20 px-4 py-1.5 text-sm font-bold text-primary dark:text-blue-300">+ $50 xayeysiis Meta ah</span>
+          </div>
+          <div className="grid sm:grid-cols-2 gap-x-8 gap-y-3">
+            {included.map(item => (
+              <div key={item} className="flex items-start gap-3">
+                <div className="w-5 h-5 rounded-full bg-primary/10 dark:bg-primary/20 text-primary flex items-center justify-center shrink-0 mt-0.5"><Check size={13} strokeWidth={3} /></div>
+                <span className="text-sm text-slate-700 dark:text-slate-200 font-medium leading-relaxed">{item}</span>
+              </div>
+            ))}
+          </div>
+          <p className="mt-6 text-xs text-slate-500 dark:text-slate-400">Xirmo kasta waxaa ku jira $50 oo xayeysiiska Meta ah. Muuqaal kasta: ugu badnaan 60 ilbiriqsi.</p>
         </div>
 
       </div>

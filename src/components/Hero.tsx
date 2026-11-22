@@ -89,7 +89,7 @@ export default function Hero() {
           </div>
           <div className="flex items-center gap-1.5">
             <CheckCircle2 size={16} className="text-primary" />
-            <span>QR & Menu Dijitaal Ah</span>
+            <span>Naqshado & Muuqaallo</span>
           </div>
           <div className="flex items-center gap-1.5">
             <CheckCircle2 size={16} className="text-primary" />
