@@ -40,6 +40,7 @@ export default function PrivacyPolicy() {
             <ul className="list-disc pl-6 mb-6 space-y-1">
               <li>Messages you type in the chat are sent to our server, to Cloudflare (which runs the chat service) and to Google (the Gemini API), which writes some replies. We currently use the free tier of the Gemini API, under which Google may use these messages, including through human review, to improve its products. Do not include personal or sensitive information in your chat messages. Automated replies can be wrong; confirm prices and agreements with our team.</li>
               <li>Chat messages are not stored unless you tick &ldquo;Kaydi sheekadan si kooxdu kuu caawiso&rdquo;. If you do, that conversation is stored in Cloudflare (D1) for up to 30 days and a cookie (<code>os_chat</code>) links your messages for up to 30 days.</li>
+              <li>When you message our WhatsApp number, an automated assistant may reply. Your messages and WhatsApp profile name are processed by Meta (WhatsApp), Cloudflare and Google (Gemini API) and kept for up to 30 days so the conversation makes sense. If you ask for a price or a person, a summary with your number is added to our internal task board (Trello) so our team can follow up.</li>
               <li>Please do not share passwords, payment card details or other sensitive information in the chat.</li>
             </ul>
 

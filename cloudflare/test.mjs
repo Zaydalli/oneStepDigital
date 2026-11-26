@@ -1,7 +1,5 @@
-import {readFileSync} from 'node:fs';
 import assert from 'node:assert/strict';
-const code=readFileSync(new URL('./worker.js',import.meta.url),'utf8');
-const {default:w}=await import('data:text/javascript;base64,'+Buffer.from(code).toString('base64'));
+const {default:w}=await import('./worker.js');
 let writes=0,gemCalls=0,gemReply='Bariis iyo hilib ayaa fiican.',gemStatus=200,gBody;
 globalThis.fetch=async(u,o)=>{gemCalls++;gBody=JSON.parse(o.body);assert.match(String(u),/generativelanguage\.googleapis\.com.*gemini-3\.5-flash-lite:generateContent/);assert.equal(o.headers['x-goog-api-key'],'gk');return new Response(JSON.stringify({candidates:[{content:{parts:[{text:gemReply}]}}]}),{status:gemStatus});};
 const env={CHAT_SECRET:'test',AI_ENABLED:'true',GEMINI_API_KEY:'gk',GEMINI_MODEL:'gemini-3.5-flash-lite',DB:{prepare:()=>({bind(){return this;},all:async()=>({results:[]}),first:async()=>({count:1}),run:async()=>{}}),batch:async()=>{writes++;}}};
