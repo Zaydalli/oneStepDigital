@@ -13,7 +13,8 @@
   ],
   "vars": {
     "AI_ENABLED": "true",
-    "GEMINI_MODEL": "gemini-3.5-flash-lite"
+    "GEMINI_MODEL": "gemini-3.5-flash-lite",
+    "WA_GRAPH_VERSION": "v23.0"
   },
   "triggers": {
     "crons": [

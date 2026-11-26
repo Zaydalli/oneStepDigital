@@ -1,3 +1,4 @@
+import { handleWhatsApp, waCleanup } from "./whatsapp.js";
 const KNOWLEDGE=`OneStep Digital — Digital Marketing Studio, Muqdisho, Soomaaliya. "Hal Tallaabo Ku Casriyee Ganacsigaaga": OneStep waxay kuu samaysaa naqshado iyo muuqaallo xirfad leh, waxayna kuu maamushaa baraha bulshada iyo xayeysiisyada si macaamiishu toos kuugala soo xiriiraan WhatsApp. Adeegyada: social media, video, web.
 Habka shaqada: 3 tallaabo — Baaris, Hirgelin, Daahfur.
 
@@ -38,7 +39,9 @@ async function gemini(env,system,history,message){
 const fallback = "Fadlan kooxda kala xiriir WhatsApp +252615894875 ama info@onestepdigital.co.";
 const json = (body, status=200) => Response.json(body,{status,headers:{"Cache-Control":"no-store"}});
 export default {
- async fetch(req, env) {
+ async fetch(req, env, ctx) {
+  // WhatsApp Cloud API webhook: authenticated by Meta's signature, not by CHAT_SECRET.
+  if (new URL(req.url).pathname==="/whatsapp") return handleWhatsApp(req, env, ctx, { gemini, KNOWLEDGE });
   if (!env.CHAT_SECRET || req.headers.get("Authorization") !== `Bearer ${env.CHAT_SECRET}`) return json({error:"Unauthorized"},401);
   if(req.method!=="POST" || new URL(req.url).pathname!=="/chat") return json({error:"Not found"},404);
   const raw=await req.text(); if(raw.length>12000) return json({error:"Too large"},413);
@@ -69,6 +72,7 @@ export default {
  },
  async scheduled(event,env,ctx){ctx.waitUntil(env.DB.batch([
   env.DB.prepare("DELETE FROM messages WHERE created_at < ?").bind(Date.now()-30*86400000),
-  env.DB.prepare("DELETE FROM daily_usage WHERE day < ?").bind(new Date(Date.now()-7*86400000).toISOString().slice(0,10))
+  env.DB.prepare("DELETE FROM daily_usage WHERE day < ?").bind(new Date(Date.now()-7*86400000).toISOString().slice(0,10)),
+  ...waCleanup(env)
  ]));}
 };
